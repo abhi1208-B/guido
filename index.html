@@ -3,293 +3,402 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guido — See Karnataka Through Local Eyes</title>
+    <title>Guido — See Karnataka Through Local Eyes | Verified Local Guides & Travel Intelligence</title>
+    <meta name="description" content="Discover 22+ Karnataka destinations and connect directly with verified local guides in Hampi, Coorg, Gokarna, Mysore, Murudeshwar, Kabini, Agumbe, and more.">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+    <!-- Navigation Header -->
     <header>
         <nav>
-            <a href="#" class="logo">Guido</a>
+            <a href="index.html" class="logo-container">
+                <span class="logo">Guido<span>.</span></span>
+                <span class="logo-tag">Karnataka</span>
+            </a>
 
             <div class="nav-links">
-                <a href="#explore">Explore</a>
-                <a href="#guides">Guides</a>
-                <a href="#live">Live Updates</a>
+                <a href="#explore" class="active">Explore Places</a>
+                <a href="#guides">Local Guides</a>
+                <a href="#planner">Trip Planner</a>
+                <a href="#live">Live Intelligence</a>
                 <a href="#how">How It Works</a>
             </div>
 
-            <button class="nav-button" type="button">Become a Guide</button>
+            <div class="nav-actions">
+                <button class="btn-wishlist" onclick="toggleWishlistDrawer()" type="button" aria-label="Open Wishlist">
+                    <span>❤️</span>
+                    <span class="count wishlist-count">0</span>
+                </button>
+                <button class="nav-button btn-become-guide" type="button">Become a Guide</button>
+            </div>
         </nav>
     </header>
 
     <main>
+        <!-- Hero Section -->
         <section class="hero">
-            <div class="hero-content">
-                <span class="eyebrow">LOCAL TRAVEL INTELLIGENCE · KARNATAKA</span>
-                <h1>See Karnataka <span>Through Local Eyes.</span></h1>
-                <p>
-                    Connect with verified locals for real-time information,
-                    authentic recommendations and unforgettable experiences.
-                </p>
+            <div class="hero-wrapper">
+                <div class="hero-content">
+                    <span class="eyebrow">LOCAL TRAVEL INTELLIGENCE · KARNATAKA</span>
+                    <h1>See Karnataka <span>Through Local Eyes.</span></h1>
+                    <p>
+                        Skip the generic tourist traps. Connect with verified local residents, historians, coffee planters, and trek leaders for authentic real-time travel intelligence and unforgettable journeys.
+                    </p>
 
-                <div class="hero-buttons">
-                    <button class="primary-btn" type="button">Find a Local Guide →</button>
-                    <button class="secondary-btn" type="button">Become a Guide</button>
+                    <div class="hero-buttons">
+                        <a href="#explore" class="primary-btn">Explore 22+ Destinations →</a>
+                        <a href="#guides" class="secondary-btn">Find a Local Guide</a>
+                    </div>
+
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <strong id="totalDestCount">22+</strong>
+                            <span>Destinations</span>
+                        </div>
+                        <div class="stat-item">
+                            <strong id="totalGuidesCount">150+</strong>
+                            <span>Verified Locals</span>
+                        </div>
+                        <div class="stat-item">
+                            <strong>4.9 ★</strong>
+                            <span>Traveler Rating</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="guide-card">
-                <div class="guide-avatar">RK</div>
-                <div class="guide-details">
-                    <strong>Ravi Kumar</strong>
-                    <span>📍 Hampi, Karnataka</span>
-                    <span>✓ Verified Local · ★★★★★ 4.9</span>
-                    <small>🟢 Available now</small>
+                <!-- Hero Interactive Cards -->
+                <div class="hero-card-stack">
+                    <div class="featured-guide-badge">
+                        <div class="guide-avatar-initials">RK</div>
+                        <div class="guide-details">
+                            <strong>Ravi Kumar <span class="verified-badge">✓</span></strong>
+                            <span>📍 Hampi, Vijayanagara · 9 yrs exp</span>
+                            <div class="guide-badge-row">
+                                <span class="rating-tag">★★★★★ 4.9 (142 reviews)</span>
+                                <span class="avail-tag"><span class="avail-dot"></span> Available now</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="live-ticker-card">
+                        <div class="ticker-icon">🌸</div>
+                        <div class="ticker-text">
+                            <small>Live from Coorg · 40m ago</small>
+                            <p>Coffee blossom showers started in Madikeri! Estates fragrant with white blooms.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- Explore Destinations Section -->
         <section class="explore" id="explore">
             <div class="section-heading">
                 <div>
-                    <span class="eyebrow">DISCOVER</span>
-                    <h2>Explore Karnataka</h2>
-                    <p>Discover places. Get local insight. Travel smarter.</p>
+                    <span class="eyebrow">DISCOVER KARNATAKA</span>
+                    <h2>Explore 22+ Iconic Destinations</h2>
+                    <p>Discover heritage ruins, mist-clad peaks, untouched coastlines, and rainforest sanctuaries.</p>
                 </div>
             </div>
 
-            <div class="search-box">
-                <input id="placeSearch" type="search"
-                       placeholder="Search places in Karnataka..."
-                       aria-label="Search destinations">
-                <button id="searchButton" type="button">🔍 Search</button>
-                <button id="clearButton" class="clear-btn" type="button">Clear</button>
+            <!-- Search & Filter Controls -->
+            <div class="search-controls">
+                <div class="search-box-row">
+                    <div class="input-wrapper">
+                        <span>🔍</span>
+                        <input id="placeSearch" type="search"
+                               placeholder="Search destinations (e.g. Hampi, Gokarna, Scuba, Coffee, Waterfall)..."
+                               aria-label="Search destinations">
+                    </div>
+                    <select class="sort-select" id="sortSelect" aria-label="Sort destinations">
+                        <option value="popular">Most Popular</option>
+                        <option value="rating">Highest Rated</option>
+                        <option value="name">Name (A – Z)</option>
+                    </select>
+                    <button id="searchButton" class="search-btn" type="button">Search</button>
+                    <button id="clearButton" class="clear-btn" type="button">Reset</button>
+                </div>
+
+                <!-- Category Tabs -->
+                <div class="categories" aria-label="Destination categories">
+                    <button class="category-btn active" data-category="all" type="button">
+                        All Places <span class="cat-count">22</span>
+                    </button>
+                    <button class="category-btn" data-category="heritage" type="button">
+                        🏛️ Heritage <span class="cat-count">8</span>
+                    </button>
+                    <button class="category-btn" data-category="mountains" type="button">
+                        🏔️ Mountains <span class="cat-count">5</span>
+                    </button>
+                    <button class="category-btn" data-category="beaches" type="button">
+                        🏖️ Beaches & Islands <span class="cat-count">4</span>
+                    </button>
+                    <button class="category-btn" data-category="nature" type="button">
+                        🌿 Nature & Rainforests <span class="cat-count">8</span>
+                    </button>
+                    <button class="category-btn" data-category="food" type="button">
+                        🍛 Food & Culture <span class="cat-count">6</span>
+                    </button>
+                    <button class="category-btn" data-category="adventure" type="button">
+                        🥾 Adventure & Treks <span class="cat-count">10</span>
+                    </button>
+                    <button class="category-btn" data-category="wildlife" type="button">
+                        🐅 Wildlife & Safaris <span class="cat-count">3</span>
+                    </button>
+                </div>
             </div>
 
-            <p id="noResults" class="no-results">
-                No destinations found. Try another place.
-            </p>
-
-            <div class="categories" aria-label="Destination categories">
-                <button class="category-btn active" data-category="all" type="button">All</button>
-                <button class="category-btn" data-category="heritage" type="button">🏛 Heritage</button>
-                <button class="category-btn" data-category="mountains" type="button">🏔 Mountains</button>
-                <button class="category-btn" data-category="beaches" type="button">🏖 Beaches</button>
-                <button class="category-btn" data-category="nature" type="button">🌿 Nature</button>
-                <button class="category-btn" data-category="food" type="button">🍛 Food</button>
-                <button class="category-btn" data-category="adventure" type="button">🥾 Adventure</button>
+            <div class="results-status">
+                <span id="searchResultsCount">Showing 22 of 22 Karnataka destinations</span>
+                <span>💡 Click <strong>Explore →</strong> on any place to see local guides & secret insights</span>
             </div>
 
+            <!-- No Results Message -->
+            <div id="noResults" class="no-results">
+                <h3>No destinations matched your search</h3>
+                <p>Try searching for a different place like "Coorg", "Murudeshwar", "Kabini", or click Reset.</p>
+                <button class="primary-btn" style="margin-top:15px;" onclick="document.querySelector('#clearButton').click()">Reset Filters</button>
+            </div>
+
+            <!-- Destination Cards Grid -->
             <div class="destination-grid" id="destinationGrid">
-                <article class="destination-card" data-category="heritage">
-                    <img src="https://images.unsplash.com/photo-1600100397608-f010e9a8d6b1?auto=format&fit=crop&w=900&q=80" alt="Hampi">
-                    <div class="destination-info">
-                        <span>VIJAYANAGARA</span>
-                        <h3>Hampi</h3>
-                        <p>Ancient ruins, boulder trails and local stories.</p>
-                        <div class="card-bottom"><strong>28 verified Guides</strong><button type="button">Explore →</button></div>
-                    </div>
-                </article>
-
-                <article class="destination-card" data-category="mountains">
-                    <img src="https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=900&q=80" alt="Coorg">
-                    <div class="destination-info">
-                        <span>KODAGU</span>
-                        <h3>Coorg</h3>
-                        <p>Coffee country, waterfalls and misty hills.</p>
-                        <div class="card-bottom"><strong>19 verified Guides</strong><button type="button">Explore →</button></div>
-                    </div>
-                </article>
-
-                <article class="destination-card" data-category="beaches">
-                    <img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=900&q=80" alt="Gokarna">
-                    <div class="destination-info">
-                        <span>UTTARA KANNADA</span>
-                        <h3>Gokarna</h3>
-                        <p>Quiet beaches and unforgettable sunset trails.</p>
-                        <div class="card-bottom"><strong>16 verified Guides</strong><button type="button">Explore →</button></div>
-                    </div>
-                </article>
-
-                <article class="destination-card" data-category="heritage food">
-                    <img src="https://images.unsplash.com/photo-1600056781444-2f0c8c6a9a9d?auto=format&fit=crop&w=900&q=80" alt="Mysore">
-                    <div class="destination-info">
-                        <span>MYSURU</span>
-                        <h3>Mysore</h3>
-                        <p>Palaces, culture, food and living heritage.</p>
-                        <div class="card-bottom"><strong>23 verified Guides</strong><button type="button">Explore →</button></div>
-                    </div>
-                </article>
-
-                <article class="destination-card" data-category="mountains food">
-                    <img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=900&q=80" alt="Chikmagalur">
-                    <div class="destination-info">
-                        <span>CHIKKAMAGALURU</span>
-                        <h3>Chikmagalur</h3>
-                        <p>Coffee estates, peaks and cool mountain air.</p>
-                        <div class="card-bottom"><strong>21 verified Guides</strong><button type="button">Explore →</button></div>
-                    </div>
-                </article>
-
-                <article class="destination-card" data-category="beaches food heritage">
-                    <img src="https://images.unsplash.com/photo-1596176530529-78163a4f7af2?auto=format&fit=crop&w=900&q=80" alt="Udupi">
-                    <div class="destination-info">
-                        <span>UDUPI</span>
-                        <h3>Udupi</h3>
-                        <p>Temple towns, coastal food and Arabian Sea views.</p>
-                        <div class="card-bottom"><strong>14 verified Guides</strong><button type="button">Explore →</button></div>
-                    </div>
-                </article>
-
-                <article class="destination-card" data-category="heritage">
-                    <img src="https://images.unsplash.com/photo-1623869675781-80aa31012a5a?auto=format&fit=crop&w=900&q=80" alt="Badami">
-                    <div class="destination-info">
-                        <span>BAGALKOT</span>
-                        <h3>Badami</h3>
-                        <p>Red sandstone caves, forts and ancient architecture.</p>
-                        <div class="card-bottom"><strong>11 verified Guides</strong><button type="button">Explore →</button></div>
-                    </div>
-                </article>
-
-                <article class="destination-card" data-category="nature adventure">
-                    <img src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=900&q=80" alt="Jog Falls">
-                    <div class="destination-info">
-                        <span>SHIVAMOGGA</span>
-                        <h3>Jog Falls</h3>
-                        <p>One of India's spectacular waterfall experiences.</p>
-                        <div class="card-bottom"><strong>9 verified Guides</strong><button type="button">Explore →</button></div>
-                    </div>
-                </article>
-
-                <article class="destination-card" data-category="mountains nature">
-                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=80" alt="Sakleshpur">
-                    <div class="destination-info">
-                        <span>HASSAN</span>
-                        <h3>Sakleshpur</h3>
-                        <p>Green hills, plantations and peaceful trails.</p>
-                        <div class="card-bottom"><strong>12 verified Guides</strong><button type="button">Explore →</button></div>
-                    </div>
-                </article>
-
-                <article class="destination-card" data-category="nature adventure">
-                    <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=80" alt="Dandeli">
-                    <div class="destination-info">
-                        <span>UTTARA KANNADA</span>
-                        <h3>Dandeli</h3>
-                        <p>Forest adventures, rivers and outdoor experiences.</p>
-                        <div class="card-bottom"><strong>17 verified Guides</strong><button type="button">Explore →</button></div>
-                    </div>
-                </article>
+                <!-- Injected dynamically via app.js -->
             </div>
         </section>
 
+        <!-- Verified Local Guides Directory Section -->
         <section class="guides-section" id="guides">
-            <div class="section-heading">
-                <div>
-                    <span class="eyebrow">MEET THE LOCALS</span>
-                    <h2>Find Your Local Guide</h2>
-                    <p>Travel with people who actually know the place.</p>
+            <div class="guides-wrapper">
+                <div class="section-heading">
+                    <div>
+                        <span class="eyebrow">VERIFIED LOCAL COMMUNITY</span>
+                        <h2>Meet Your Karnataka Guides</h2>
+                        <p>Travel with certified historians, coffee planters, surf coaches, and rainforest naturalists.</p>
+                    </div>
+                </div>
+
+                <div class="guides-filter-bar">
+                    <div class="guides-filter-tags">
+                        <button class="guide-filter-btn active" data-specialty="all" type="button">All Guides</button>
+                        <button class="guide-filter-btn" data-specialty="History" type="button">🏛️ Temple Historians</button>
+                        <button class="guide-filter-btn" data-specialty="Coffee" type="button">☕ Coffee & Plantations</button>
+                        <button class="guide-filter-btn" data-specialty="Trek" type="button">🥾 High Peak Treks</button>
+                        <button class="guide-filter-btn" data-specialty="Scuba" type="button">🤿 Scuba & Surfing</button>
+                        <button class="guide-filter-btn" data-specialty="Wildlife" type="button">🐅 Wildlife Trackers</button>
+                        <button class="guide-filter-btn" data-specialty="Food" type="button">🍛 Culinary Hosts</button>
+                    </div>
+                    <button class="btn-become-guide primary-btn" style="padding:9px 18px;font-size:13px;" type="button">+ Join as Local Guide</button>
+                </div>
+
+                <!-- Guides Grid Container -->
+                <div class="guides-grid" id="guidesGrid">
+                    <!-- Injected dynamically via app.js -->
                 </div>
             </div>
+        </section>
 
-            <div class="guides-grid">
-                <article class="guide-profile">
-                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Arjun Rao">
-                    <div class="guide-profile-info">
-                        <div class="guide-name-row"><h3>Arjun Rao</h3><span class="verified">✓</span></div>
-                        <span class="guide-location">📍 Hampi</span>
-                        <div class="guide-rating">★★★★★ <strong>4.9</strong></div>
-                        <p>Heritage explorer · Food lover</p>
-                        <button class="guide-view-btn" type="button">View Profile →</button>
-                    </div>
-                </article>
+        <!-- Interactive Trip Planner Section -->
+        <section class="trip-planner-section" id="planner">
+            <div class="planner-container">
+                <div class="planner-header">
+                    <span class="eyebrow" style="background:rgba(242,140,40,0.2);color:#f28c28;border-color:rgba(242,140,40,0.4);">SMART ITINERARY BUILDER</span>
+                    <h2>Plan Your Karnataka Journey with Locals</h2>
+                    <p>Select your travel preferences to get a personalized day-by-day route with recommended local guides and authentic food stops.</p>
+                </div>
 
-                <article class="guide-profile">
-                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Ananya Shetty">
-                    <div class="guide-profile-info">
-                        <div class="guide-name-row"><h3>Ananya Shetty</h3><span class="verified">✓</span></div>
-                        <span class="guide-location">📍 Coorg</span>
-                        <div class="guide-rating">★★★★☆ <strong>4.8</strong></div>
-                        <p>Coffee trails · Nature guide</p>
-                        <button class="guide-view-btn" type="button">View Profile →</button>
+                <form class="planner-form-grid" onsubmit="generateCustomPlan(event)">
+                    <div class="form-group">
+                        <label>Preferred Travel Style</label>
+                        <select id="planInterest">
+                            <option value="heritage">🏛️ Heritage & Architecture</option>
+                            <option value="mountains">🏔️ Coffee Hills & Peaks</option>
+                            <option value="beaches">🏖️ Coastal & Water Adventures</option>
+                            <option value="nature">🌿 Rainforests & Waterfalls</option>
+                            <option value="wildlife">🐅 Jungle & Wildlife Safaris</option>
+                            <option value="all">🌟 Best of Karnataka (Mixed)</option>
+                        </select>
                     </div>
-                </article>
 
-                <article class="guide-profile">
-                    <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Vikram Gowda">
-                    <div class="guide-profile-info">
-                        <div class="guide-name-row"><h3>Vikram Gowda</h3><span class="verified">✓</span></div>
-                        <span class="guide-location">📍 Gokarna</span>
-                        <div class="guide-rating">★★★★★ <strong>5.0</strong></div>
-                        <p>Beach expert · Adventure lover</p>
-                        <button class="guide-view-btn" type="button">View Profile →</button>
+                    <div class="form-group">
+                        <label>Duration of Stay</label>
+                        <select id="planDuration">
+                            <option value="2">2 Days (Weekend Trip)</option>
+                            <option value="3" selected>3 Days (Short Escape)</option>
+                            <option value="5">5 Days (Grand Circuit)</option>
+                            <option value="7">7 Days (Complete Experience)</option>
+                        </select>
                     </div>
-                </article>
 
-                <article class="guide-profile">
-                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Priya Nair">
-                    <div class="guide-profile-info">
-                        <div class="guide-name-row"><h3>Priya Nair</h3><span class="verified">✓</span></div>
-                        <span class="guide-location">📍 Mysore</span>
-                        <div class="guide-rating">★★★★☆ <strong>4.7</strong></div>
-                        <p>Culture · Local food · History</p>
-                        <button class="guide-view-btn" type="button">View Profile →</button>
+                    <div class="form-group">
+                        <label>Starting Point / Hub</label>
+                        <select id="planRegion">
+                            <option value="bangalore">Bengaluru (Central)</option>
+                            <option value="mangalore">Mangaluru (Coastal)</option>
+                            <option value="hubli">Hubballi / Belagavi (North)</option>
+                            <option value="mysore">Mysuru (South)</option>
+                        </select>
                     </div>
-                </article>
 
-                <article class="guide-profile">
-                    <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="Kiran Kumar">
-                    <div class="guide-profile-info">
-                        <div class="guide-name-row"><h3>Kiran Kumar</h3><span class="verified">✓</span></div>
-                        <span class="guide-location">📍 Chikmagalur</span>
-                        <div class="guide-rating">★★★★★ <strong>4.9</strong></div>
-                        <p>Trekking · Coffee estates</p>
-                        <button class="guide-view-btn" type="button">View Profile →</button>
-                    </div>
-                </article>
+                    <button class="btn-generate-plan" type="submit">
+                        <span>✨</span> Generate Itinerary
+                    </button>
+                </form>
 
-                <article class="guide-profile">
-                    <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Megha Rao">
-                    <div class="guide-profile-info">
-                        <div class="guide-name-row"><h3>Megha Rao</h3><span class="verified">✓</span></div>
-                        <span class="guide-location">📍 Udupi</span>
-                        <div class="guide-rating">★★★★☆ <strong>4.8</strong></div>
-                        <p>Coastal life · Food · Temples</p>
-                        <button class="guide-view-btn" type="button">View Profile →</button>
-                    </div>
-                </article>
+                <div class="planner-output-card" id="plannerOutput">
+                    <!-- Injected dynamically via app.js on submission -->
+                </div>
             </div>
         </section>
 
+        <!-- Live Local Updates Intelligence Feed -->
+        <section class="live-section" id="live">
+            <div class="live-wrapper">
+                <div class="live-header-row">
+                    <div>
+                        <span class="eyebrow">LIVE TRAVEL RADAR</span>
+                        <h2>Real-Time Karnataka Local Updates</h2>
+                        <p>Live trail conditions, waterfall surges, flower blooms, wildlife sightings, and crowd status reported by verified locals on the ground.</p>
+                    </div>
+                    <button class="secondary-btn" style="color:var(--dark);border-color:var(--border-color);background:#fff;" onclick="showToast('ℹ️ Real-time local feed refreshes automatically every 5 minutes.')">🔄 Refresh Status</button>
+                </div>
+
+                <div class="live-feed-grid" id="liveFeedGrid">
+                    <!-- Injected dynamically via app.js -->
+                </div>
+            </div>
+        </section>
+
+        <!-- How Guido Works -->
         <section class="info-section" id="how">
-            <span class="eyebrow">HOW GUIDO WORKS</span>
-            <h2>Local knowledge, without the guesswork.</h2>
-            <div class="info-grid">
-                <div><strong>01</strong><h3>Choose a place</h3><p>Search destinations and discover what locals recommend.</p></div>
-                <div><strong>02</strong><h3>Find a verified local</h3><p>Browse profiles, ratings and local specialties.</p></div>
-                <div><strong>03</strong><h3>Travel with confidence</h3><p>Use local insight to build a better trip.</p></div>
+            <div style="text-align:center;max-width:700px;margin:0 auto 30px;">
+                <span class="eyebrow">TRANSPARENT & AUTHENTIC</span>
+                <h2>How Guido Works</h2>
+                <p>Direct connection to verified residents without agency markups or robotic tours.</p>
             </div>
-        </section>
 
-        <section class="info-section live-section" id="live">
-            <span class="eyebrow">LIVE UPDATES</span>
-            <h2>What is happening locally?</h2>
-            <p>Live local updates will be connected here as Guido grows into a full travel platform.</p>
+            <div class="info-grid">
+                <div class="info-card">
+                    <span class="step-num">01</span>
+                    <h3>Select Any Destination</h3>
+                    <p>Search through 22+ handpicked Karnataka locations with secret spots, season advisories, and local cuisine recommendations.</p>
+                </div>
+                <div class="info-card">
+                    <span class="step-num">02</span>
+                    <h3>Connect with Verified Locals</h3>
+                    <p>Review guide profiles, languages spoken, traveler ratings, hourly/daily pricing, and specialty itineraries tailored to your style.</p>
+                </div>
+                <div class="info-card">
+                    <span class="step-num">03</span>
+                    <h3>Travel with Confidence</h3>
+                    <p>Get real-time WhatsApp coordination, insider access to non-touristy gems, and direct support throughout your Karnataka trip.</p>
+                </div>
+            </div>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer>
-        <div class="footer-logo">Guido</div>
-        <p>See Karnataka Through Local Eyes.</p>
-        <div class="footer-links">
-            <a href="#explore">Explore</a>
-            <a href="#guides">Guides</a>
-            <a href="#live">Live Updates</a>
-            <a href="#how">How It Works</a>
+        <div class="footer-wrapper">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="logo">Guido<span>.</span></div>
+                    <p>Empowering travelers with authentic local travel intelligence across 31 districts of Karnataka.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Top Destinations</h4>
+                    <ul>
+                        <li><a href="#explore" onclick="filterToDestination('hampi')">Hampi Heritage</a></li>
+                        <li><a href="#explore" onclick="filterToDestination('coorg')">Coorg Coffee Hills</a></li>
+                        <li><a href="#explore" onclick="filterToDestination('gokarna')">Gokarna Beaches</a></li>
+                        <li><a href="#explore" onclick="filterToDestination('kabini')">Kabini Wildlife</a></li>
+                        <li><a href="#explore" onclick="filterToDestination('murudeshwar')">Murudeshwar Scuba</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Platform Features</h4>
+                    <ul>
+                        <li><a href="#explore">Explore Destinations</a></li>
+                        <li><a href="#guides">Verified Guides Directory</a></li>
+                        <li><a href="#planner">Smart Itinerary Planner</a></li>
+                        <li><a href="#live">Live Local Radar</a></li>
+                        <li><a href="javascript:void(0)" class="btn-become-guide">Become a Local Guide</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Community & Trust</h4>
+                    <ul>
+                        <li><a href="javascript:void(0)">Guide Verification Standards</a></li>
+                        <li><a href="javascript:void(0)">Karnataka Forest Dept Rules</a></li>
+                        <li><a href="javascript:void(0)">Sustainable Tourism Policy</a></li>
+                        <li><a href="javascript:void(0)">Safety & Support</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>© 2026 Guido Travel Intelligence. Built for Karnataka.</div>
+                <div>Made with ❤️ for Karnataka Heritage, Western Ghats & Coastal Culture.</div>
+            </div>
         </div>
-        <small>© 2026 Guido. Portfolio prototype.</small>
     </footer>
+
+    <!-- Wishlist Drawer -->
+    <div class="wishlist-drawer" id="wishlistDrawer">
+        <div class="wishlist-header">
+            <h3>❤️ Saved Destinations (<span class="wishlist-count">0</span>)</h3>
+            <button class="btn-remove-fav" onclick="toggleWishlistDrawer()">✕</button>
+        </div>
+        <div class="wishlist-items-list" id="wishlistItemsList">
+            <!-- Rendered by app.js -->
+        </div>
+    </div>
+
+    <!-- Destination Insight & Explore Guides Modal -->
+    <div class="modal-backdrop" id="destinationModal">
+        <div class="modal-card">
+            <button class="modal-close-btn" type="button" aria-label="Close modal">✕</button>
+            <div class="modal-body">
+                <!-- Dynamically filled by app.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Guide Profile Modal -->
+    <div class="modal-backdrop" id="guideProfileModal">
+        <div class="modal-card">
+            <button class="modal-close-btn" type="button" aria-label="Close modal">✕</button>
+            <div class="modal-body">
+                <!-- Dynamically filled by app.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Book Guide Modal -->
+    <div class="modal-backdrop" id="bookGuideModal">
+        <div class="modal-card" style="max-width:560px;">
+            <button class="modal-close-btn" type="button" aria-label="Close modal">✕</button>
+            <div class="modal-body">
+                <!-- Dynamically filled by app.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Become a Guide Modal -->
+    <div class="modal-backdrop" id="becomeGuideModal">
+        <div class="modal-card" style="max-width:600px;">
+            <button class="modal-close-btn" type="button" aria-label="Close modal">✕</button>
+            <div class="modal-body">
+                <!-- Dynamically filled by app.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toastContainer"></div>
 
     <script src="js/app.js"></script>
 </body>
