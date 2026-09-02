@@ -1,8 +1,9 @@
-// ==========================================
-// GUIDO - KARNATAKA LOCAL TRAVEL INTELLIGENCE
-// ==========================================
+// =========================================================
+// GUIDO - KARNATAKA TRAVEL INTELLIGENCE & VERIFICATION ENGINE
+// Live Ground Photos · Local Call Enquiries · Verified Guides
+// =========================================================
 
-// 1. COMPREHENSIVE KARNATAKA DESTINATIONS DATASET (22 LOCATIONS)
+// 1. COMPREHENSIVE 22 DESTINATIONS DATASET
 const destinationsData = [
     {
         id: "hampi",
@@ -12,6 +13,9 @@ const destinationsData = [
         img: "https://images.unsplash.com/photo-1600100397608-f010e9a8d6b1?auto=format&fit=crop&w=900&q=80",
         description: "UNESCO World Heritage Site with mesmerizing 14th-century Vijayanagara ruins, monolithic boulder hills, and sacred river banks.",
         guideCount: 28,
+        spotterCount: 14,
+        liveStatus: "🟢 Sunny & Dry · Clear Skies",
+        livePhotoImg: "https://images.unsplash.com/photo-1600100397608-f010e9a8d6b1?auto=format&fit=crop&w=700&q=80",
         rating: 4.9,
         bestTime: "October – March",
         topFood: "Benne Dosa, Mango Tree Thali, Filter Coffee",
@@ -26,6 +30,9 @@ const destinationsData = [
         img: "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=900&q=80",
         description: "The Scotland of India renowned for misty Western Ghats, sprawling coffee & spice estates, and cascading waterfalls.",
         guideCount: 24,
+        spotterCount: 18,
+        liveStatus: "🌸 Coffee Blossom Season · Mild Mist",
+        livePhotoImg: "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=700&q=80",
         rating: 4.8,
         bestTime: "September – April",
         topFood: "Pandi Curry, Kadambuttu, Akki Roti, Wild Bamboo Shoot Curry",
@@ -40,67 +47,14 @@ const destinationsData = [
         img: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=900&q=80",
         description: "Pristine Arabian Sea shores, cliffside beach treks, bohemian sunsets, and the sacred Mahabaleshwar temple.",
         guideCount: 20,
+        spotterCount: 11,
+        liveStatus: "🌊 Calm Arabian Sea · Sunset 6:35 PM",
+        livePhotoImg: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=700&q=80",
         rating: 4.9,
         bestTime: "October – March",
         topFood: "Gadbad Ice Cream, Coastal Prawn Curry, Neer Dosa, Fresh Kokum Juice",
         secrets: "Bioluminescent night plankton at Paradise beach, cliff hiking from Kudle to Half Moon Beach.",
         popularHighlights: ["Om Beach", "Kudle Beach Trek", "Mahabaleshwar Temple", "Paradise Beach"]
-    },
-    {
-        id: "mysore",
-        name: "Mysore (Mysuru)",
-        district: "Mysuru",
-        categories: ["heritage", "food"],
-        img: "https://images.unsplash.com/photo-1600056781444-2f0c8c6a9a9d?auto=format&fit=crop&w=900&q=80",
-        description: "The royal cultural capital of Karnataka celebrated for opulent palaces, silk sarees, sandalwood, and sweet Mysore Pak.",
-        guideCount: 32,
-        rating: 4.9,
-        bestTime: "September – March",
-        topFood: "Mysore Pak (Guru Sweet Mart), Mylari Dosa, Mysore Rasam, Filter Kaapi",
-        secrets: "Sunday night lighting of 100,000 palace bulbs, Devaraja fruit and spice heritage market tour at 7 AM.",
-        popularHighlights: ["Mysore Palace", "Chamundi Hill", "Devaraja Market", "Brindavan Gardens"]
-    },
-    {
-        id: "chikmagalur",
-        name: "Chikmagalur",
-        district: "Chikkamagaluru",
-        categories: ["mountains", "nature", "food"],
-        img: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=900&q=80",
-        description: "Birthplace of Indian coffee surrounded by majestic peaks, lush coffee plantations, and cool mountain clouds.",
-        guideCount: 22,
-        rating: 4.8,
-        bestTime: "September – May",
-        topFood: "Malnad Style Akki Roti, Jackfruit Curry, Fresh Roasted Arabica/Robusta Coffee",
-        secrets: "Early morning hike to Mullayanagiri (highest peak in Karnataka), offbeat Baba Budangiri caves.",
-        popularHighlights: ["Mullayanagiri Peak", "Baba Budangiri", "Hebbe Falls", "Coffee Estate Walks"]
-    },
-    {
-        id: "udupi",
-        name: "Udupi",
-        district: "Udupi",
-        categories: ["beaches", "food", "heritage"],
-        img: "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?auto=format&fit=crop&w=900&q=80",
-        description: "Temple town famed for Krishna Mutt, St. Mary's volcanic basalt islands, world-famous vegetarian cuisine, and clean beaches.",
-        guideCount: 18,
-        rating: 4.8,
-        bestTime: "October – March",
-        topFood: "Udupi Sambar, Goli Baje, Neer Dosa, Mangalore Buns, Kotte Kadubu",
-        secrets: "Kayaking in the mangrove backwaters of Saligrama, unique hexagonal rock pillars at St. Mary's.",
-        popularHighlights: ["Sri Krishna Temple", "Malpe Beach & Sea Walk", "St. Mary's Island", "Kapu Lighthouse"]
-    },
-    {
-        id: "badami",
-        name: "Badami",
-        district: "Bagalkot",
-        categories: ["heritage"],
-        img: "https://images.unsplash.com/photo-1623869675781-80aa31012a5a?auto=format&fit=crop&w=900&q=80",
-        description: "Ancient Chalukya capital nestled between red sandstone canyons, famous for 6th-century rock-cut cave temples and forts.",
-        guideCount: 15,
-        rating: 4.7,
-        bestTime: "October – February",
-        topFood: "Jolada Rotti Oota, Shenga Chutney, Yennegai (stuffed brinjal), North Karnataka meals",
-        secrets: "Agastya Lake reflection of Bhutanatha temples at sunrise, rock climbing on Badami red sandstone cliffs.",
-        popularHighlights: ["Cave Temples (Caves 1-4)", "Bhutanatha Temple", "Badami Fort", "Agastya Lake"]
     },
     {
         id: "jogfalls",
@@ -110,6 +64,9 @@ const destinationsData = [
         img: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=900&q=80",
         description: "Second highest plunge waterfall in India where the Sharavathi River drops 830 ft in four cascades: Raja, Roarer, Rocket, and Rani.",
         guideCount: 12,
+        spotterCount: 9,
+        liveStatus: "🌊 80% High Surge Flow · Plunge Base Open",
+        livePhotoImg: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=700&q=80",
         rating: 4.6,
         bestTime: "July – December (Monsoon peak)",
         topFood: "Pathrode, Akki Rotti with coconut chutney, Sharavathi freshwater fish",
@@ -117,76 +74,21 @@ const destinationsData = [
         popularHighlights: ["Raja & Rani Viewpoints", "Sharavathi Valley View", "Honnemaradu Backwaters", "Linganamakki Dam"]
     },
     {
-        id: "sakleshpur",
-        name: "Sakleshpur",
-        district: "Hassan",
-        categories: ["mountains", "nature"],
-        img: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=80",
-        description: "Enchanting hill town in the Western Ghats surrounded by tea, coffee, cardamom plantations, and medieval star-shaped forts.",
-        guideCount: 16,
-        rating: 4.7,
-        bestTime: "August – April",
-        topFood: "Bamboo Shoot Pickle, Halasina Hannina Kadabu (Jackfruit sweets), Cardamom Chai",
-        secrets: "Railway track trek over ancient British bridges, 360-degree hilltop views at Manjarabad Star Fort.",
-        popularHighlights: ["Manjarabad Fort", "Bisle Ghat Viewpoint", "Jenukal Gudda", "Mookanamane Falls"]
-    },
-    {
-        id: "dandeli",
-        name: "Dandeli",
-        district: "Uttara Kannada",
-        categories: ["nature", "adventure", "wildlife"],
-        img: "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=80",
-        description: "Adventure hub nestled along the Kali River, famous for grade-3 white water rafting, hornbill birding, and dense teak forests.",
-        guideCount: 19,
+        id: "chikmagalur",
+        name: "Chikmagalur",
+        district: "Chikkamagaluru",
+        categories: ["mountains", "nature", "food"],
+        img: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=900&q=80",
+        description: "Birthplace of Indian coffee surrounded by majestic peaks, lush coffee plantations, and cool mountain clouds.",
+        guideCount: 22,
+        spotterCount: 16,
+        liveStatus: "☁️ Mullayanagiri Cloud Sea · 19°C",
+        livePhotoImg: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=700&q=80",
         rating: 4.8,
-        bestTime: "October – May",
-        topFood: "North Canara Fish Curry, Bamboo Rice Kheer, Jowar Bhakri",
-        secrets: "Night jungle camping, natural jacuzzis in the Kali river rapids, spotting Great Indian Hornbills at Timber Depot.",
-        popularHighlights: ["Kali River White Water Rafting", "Dandeli Wildlife Sanctuary", "Syntheri Rocks", "Shiroli Peak"]
-    },
-
-    // +12 NEW KARNATAKA LOCATIONS
-    {
-        id: "murudeshwar",
-        name: "Murudeshwar",
-        district: "Uttara Kannada",
-        categories: ["beaches", "heritage", "adventure"],
-        img: "https://images.unsplash.com/photo-1627894006066-b45786537123?auto=format&fit=crop&w=900&q=80",
-        description: "Home to the world's second-tallest Shiva statue (123 ft) surrounded on three sides by the Arabian Sea, and scuba diving hub at Netrani Island.",
-        guideCount: 17,
-        rating: 4.8,
-        bestTime: "October – April",
-        topFood: "Anjal Fish Tawa Fry, Crab Masala, Neer Dosa, Tender Coconut Pudding",
-        secrets: "Scuba diving coral reefs at Netrani Island with certified divemasters, elevator ride to 18th floor of the 249-ft Rajagopura.",
-        popularHighlights: ["Lord Shiva Statue", "Murudeshwar Rajagopura", "Netrani Island Scuba", "Bhatkal Light House"]
-    },
-    {
-        id: "belur-halebidu",
-        name: "Belur & Halebidu",
-        district: "Hassan",
-        categories: ["heritage"],
-        img: "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?auto=format&fit=crop&w=900&q=80",
-        description: "Masterpieces of 12th-century Hoysala soapstone architecture, featuring thousands of microscopic dancing figures and detailed friezes.",
-        guideCount: 15,
-        rating: 4.9,
-        bestTime: "October – March",
-        topFood: "Hassan Bisi Bele Bath, Davanagere Benne Dosa, Fresh Filter Coffee",
-        secrets: "Madanika dancer sculptures with rotating stone bangles, star-shaped foundations that have withstood 900 years.",
-        popularHighlights: ["Chennakesava Temple (Belur)", "Hoysaleswara Temple (Halebidu)", "Kedareshwara Temple", "Belur Archeological Museum"]
-    },
-    {
-        id: "agumbe",
-        name: "Agumbe",
-        district: "Shivamogga",
-        categories: ["nature", "adventure"],
-        img: "https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=900&q=80",
-        description: "The 'Cherrapunji of the South' — a pristine rainforest sanctuary famous for King Cobra research, misty Western Ghats sunsets, and hidden waterfalls.",
-        guideCount: 14,
-        rating: 4.8,
-        bestTime: "June – February",
-        topFood: "Kashaya (herbal brew), Akki Rotti with Chutney Pudi, Jackfruit Chips",
-        secrets: "Rainforest canopy walks guided by certified herpetologists, sunset over the Arabian Sea horizon from Agumbe Ghat.",
-        popularHighlights: ["Agumbe Sunset Point", "Barkana Falls", "Onake Abbi Falls", "Agumbe Rainforest Research Station (ARRS)"]
+        bestTime: "September – May",
+        topFood: "Malnad Style Akki Roti, Jackfruit Curry, Fresh Roasted Arabica/Robusta Coffee",
+        secrets: "Early morning hike to Mullayanagiri (highest peak in Karnataka), offbeat Baba Budangiri caves.",
+        popularHighlights: ["Mullayanagiri Peak", "Baba Budangiri", "Hebbe Falls", "Coffee Estate Walks"]
     },
     {
         id: "kabini",
@@ -196,39 +98,99 @@ const destinationsData = [
         img: "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=900&q=80",
         description: "One of Asia's premier wildlife reserves on the Kabini River backwaters, renowned for black panthers, wild tigers, and massive elephant herds.",
         guideCount: 21,
+        spotterCount: 8,
+        liveStatus: "🐅 Big Cat Sighting Zone B · Elephants at River",
+        livePhotoImg: "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=700&q=80",
         rating: 4.9,
         bestTime: "October – May",
         topFood: "Jungle Camp Barbecue, Mysore Thali, Bamboo Steamed Puttu",
-        secrets: "Boat safari during evening golden hour when hundreds of wild elephants gather at the riverbank, black panther tracking in zone B.",
+        secrets: "Boat safari during evening golden hour when hundreds of wild elephants gather at the riverbank.",
         popularHighlights: ["Kabini River Boat Safari", "Nagarhole National Park Safari", "Taraka Dam", "Kutta Tribal Village Trail"]
     },
     {
-        id: "pattadakal-aihole",
-        name: "Pattadakal & Aihole",
-        district: "Bagalkot",
-        categories: ["heritage"],
-        img: "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=900&q=80",
-        description: "The cradle of Indian temple architecture on the banks of Malaprabha River, showcasing a unique synthesis of Dravidian and Nagara styles.",
-        guideCount: 13,
-        rating: 4.8,
-        bestTime: "October – March",
-        topFood: "North Karnataka Sajje Rotti, Stuffed Capsicum, Shenga Holige",
-        secrets: "Durga Temple with rare horseshoe apsidal plan in Aihole, astronomical carvings on Virupaksha temple ceiling.",
-        popularHighlights: ["Virupaksha Temple (Pattadakal)", "Durga Temple Complex (Aihole)", "Mallikarjuna Temple", "Lad Khan Temple"]
+        id: "mysore",
+        name: "Mysore (Mysuru)",
+        district: "Mysuru",
+        categories: ["heritage", "food"],
+        img: "https://images.unsplash.com/photo-1600056781444-2f0c8c6a9a9d?auto=format&fit=crop&w=900&q=80",
+        description: "The royal cultural capital of Karnataka celebrated for opulent palaces, silk sarees, sandalwood, and sweet Mysore Pak.",
+        guideCount: 32,
+        spotterCount: 22,
+        liveStatus: "🏛️ Palace Illuminations Ready · Low Traffic",
+        livePhotoImg: "https://images.unsplash.com/photo-1600056781444-2f0c8c6a9a9d?auto=format&fit=crop&w=700&q=80",
+        rating: 4.9,
+        bestTime: "September – March",
+        topFood: "Mysore Pak, Mylari Dosa, Mysore Rasam, Filter Kaapi",
+        secrets: "Sunday night lighting of 100,000 palace bulbs, Devaraja fruit and spice heritage market tour at 7 AM.",
+        popularHighlights: ["Mysore Palace", "Chamundi Hill", "Devaraja Market", "Brindavan Gardens"]
     },
     {
-        id: "bandipur",
-        name: "Bandipur National Park",
-        district: "Chamarajanagar",
-        categories: ["nature", "wildlife", "adventure"],
-        img: "https://images.unsplash.com/photo-1534567153574-2b12153a87f0?auto=format&fit=crop&w=900&q=80",
-        description: "A flagship Project Tiger reserve where the Deccan Plateau meets the Western Ghats, featuring dry deciduous forests and thriving biodiversity.",
-        guideCount: 16,
+        id: "udupi",
+        name: "Udupi & Malpe",
+        district: "Udupi",
+        categories: ["beaches", "food", "heritage"],
+        img: "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?auto=format&fit=crop&w=900&q=80",
+        description: "Temple town famed for Krishna Mutt, St. Mary's volcanic basalt islands, world-famous vegetarian cuisine, and clean beaches.",
+        guideCount: 18,
+        spotterCount: 12,
+        liveStatus: "⛵ St. Mary's Ferry Operational · 28°C",
+        livePhotoImg: "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?auto=format&fit=crop&w=700&q=80",
+        rating: 4.8,
+        bestTime: "October – March",
+        topFood: "Udupi Sambar, Goli Baje, Neer Dosa, Mangalore Buns, Kotte Kadubu",
+        secrets: "Kayaking in the mangrove backwaters of Saligrama, unique hexagonal rock pillars at St. Mary's.",
+        popularHighlights: ["Sri Krishna Temple", "Malpe Beach & Sea Walk", "St. Mary's Island", "Kapu Lighthouse"]
+    },
+    {
+        id: "badami",
+        name: "Badami & Aihole",
+        district: "Bagalkot",
+        categories: ["heritage"],
+        img: "https://images.unsplash.com/photo-1623869675781-80aa31012a5a?auto=format&fit=crop&w=900&q=80",
+        description: "Ancient Chalukya capital nestled between red sandstone canyons, famous for 6th-century rock-cut cave temples and forts.",
+        guideCount: 15,
+        spotterCount: 7,
+        liveStatus: "☀️ Clear Canyons · Low Queue at Cave 1",
+        livePhotoImg: "https://images.unsplash.com/photo-1623869675781-80aa31012a5a?auto=format&fit=crop&w=700&q=80",
         rating: 4.7,
-        bestTime: "September – April",
-        topFood: "Traditional Kannada Oota, Maddur Vada, Ragi Mudde with Nati Koli Saaru",
-        secrets: "Gopalaswamy Betta mist-covered peak inside the tiger reserve with 700-year-old temple.",
-        popularHighlights: ["Bandipur Open Gypsy Safari", "Gopalaswamy Betta Peak", "Moyar River Gorge", "Forest Interpretation Centre"]
+        bestTime: "October – February",
+        topFood: "Jolada Rotti Oota, Shenga Chutney, Yennegai (stuffed brinjal)",
+        secrets: "Agastya Lake reflection of Bhutanatha temples at sunrise, rock climbing on Badami red sandstone cliffs.",
+        popularHighlights: ["Cave Temples (Caves 1-4)", "Bhutanatha Temple", "Badami Fort", "Agastya Lake"]
+    },
+    {
+        id: "murudeshwar",
+        name: "Murudeshwar",
+        district: "Uttara Kannada",
+        categories: ["beaches", "heritage", "adventure"],
+        img: "https://images.unsplash.com/photo-1627894006066-b45786537123?auto=format&fit=crop&w=900&q=80",
+        description: "Home to the world's second-tallest Shiva statue (123 ft) surrounded by the Arabian Sea, and scuba diving hub at Netrani Island.",
+        guideCount: 17,
+        spotterCount: 10,
+        liveStatus: "🤿 Netrani Scuba Active · 15m Visibility",
+        livePhotoImg: "https://images.unsplash.com/photo-1627894006066-b45786537123?auto=format&fit=crop&w=700&q=80",
+        rating: 4.8,
+        bestTime: "October – April",
+        topFood: "Anjal Fish Tawa Fry, Crab Masala, Neer Dosa, Tender Coconut Pudding",
+        secrets: "Scuba diving coral reefs at Netrani Island with certified divemasters, elevator ride to 18th floor of the 249-ft Rajagopura.",
+        popularHighlights: ["Lord Shiva Statue", "Murudeshwar Rajagopura", "Netrani Island Scuba", "Bhatkal Light House"]
+    },
+    {
+        id: "agumbe",
+        name: "Agumbe",
+        district: "Shivamogga",
+        categories: ["nature", "adventure"],
+        img: "https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=900&q=80",
+        description: "The 'Cherrapunji of the South' — a pristine rainforest sanctuary famous for King Cobra research, Western Ghats sunsets, and hidden waterfalls.",
+        guideCount: 14,
+        spotterCount: 6,
+        liveStatus: "🌧️ Dense Rain Canopy · Sunset Peak Clear",
+        livePhotoImg: "https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=700&q=80",
+        rating: 4.8,
+        bestTime: "June – February",
+        topFood: "Kashaya (herbal brew), Akki Rotti with Chutney Pudi, Jackfruit Chips",
+        secrets: "Rainforest canopy walks guided by certified herpetologists, sunset over the Arabian Sea horizon from Agumbe Ghat.",
+        popularHighlights: ["Agumbe Sunset Point", "Barkana Falls", "Onake Abbi Falls", "ARRS Rainforest Station"]
     },
     {
         id: "kudremukh",
@@ -238,67 +200,133 @@ const destinationsData = [
         img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80",
         description: "Iconic horse-face mountain peak rising 1,894m above sea level, carpeted in endless emerald shola grasslands and evergreen rainforests.",
         guideCount: 18,
+        spotterCount: 8,
+        liveStatus: "🟢 50 Trek Permits Open · Cool Breeze",
+        livePhotoImg: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=700&q=80",
         rating: 4.9,
         bestTime: "September – February",
         topFood: "Malnad Jackfruit Biryani, Pathrode, Filter Coffee, Hot Uppittu",
         secrets: "Forest department licensed high-altitude 22km day trek through shola forest valleys and cloud beds.",
-        popularHighlights: ["Kudremukh Peak Trek", "Hanuman Gundi Falls", "Kalasa Temple Town", "L监管 Grasslands"]
+        popularHighlights: ["Kudremukh Peak Trek", "Hanuman Gundi Falls", "Kalasa Temple Town", "Lobo House Grasslands"]
+    },
+    {
+        id: "belur-halebidu",
+        name: "Belur & Halebidu",
+        district: "Hassan",
+        categories: ["heritage"],
+        img: "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?auto=format&fit=crop&w=900&q=80",
+        description: "Masterpieces of 12th-century Hoysala soapstone architecture, featuring thousands of microscopic dancing figures and detailed friezes.",
+        guideCount: 15,
+        spotterCount: 9,
+        liveStatus: "🏛️ Open for Visitors · Audio Guides Active",
+        livePhotoImg: "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?auto=format&fit=crop&w=700&q=80",
+        rating: 4.9,
+        bestTime: "October – March",
+        topFood: "Hassan Bisi Bele Bath, Davanagere Benne Dosa, Fresh Filter Coffee",
+        secrets: "Madanika dancer sculptures with rotating stone bangles, star-shaped foundations that have withstood 900 years.",
+        popularHighlights: ["Chennakesava Temple (Belur)", "Hoysaleswara Temple (Halebidu)", "Kedareshwara Temple", "Archeological Museum"]
+    },
+    {
+        id: "dandeli",
+        name: "Dandeli",
+        district: "Uttara Kannada",
+        categories: ["nature", "adventure", "wildlife"],
+        img: "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=80",
+        description: "Adventure hub nestled along the Kali River, famous for grade-3 white water rafting, hornbill birding, and dense teak forests.",
+        guideCount: 19,
+        spotterCount: 11,
+        liveStatus: "🚣 Kali River Rafting Grade 3 Active",
+        livePhotoImg: "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=700&q=80",
+        rating: 4.8,
+        bestTime: "October – May",
+        topFood: "North Canara Fish Curry, Bamboo Rice Kheer, Jowar Bhakri",
+        secrets: "Night jungle camping, natural jacuzzis in the Kali river rapids, spotting Great Indian Hornbills at Timber Depot.",
+        popularHighlights: ["Kali River Rafting", "Dandeli Wildlife Sanctuary", "Syntheri Rocks", "Shiroli Peak"]
+    },
+    {
+        id: "sakleshpur",
+        name: "Sakleshpur",
+        district: "Hassan",
+        categories: ["mountains", "nature"],
+        img: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=80",
+        description: "Enchanting hill town in the Western Ghats surrounded by tea, coffee, cardamom plantations, and medieval star-shaped forts.",
+        guideCount: 16,
+        spotterCount: 9,
+        liveStatus: "⛰️ Bisle Ghat Viewpoint 100% Clear",
+        livePhotoImg: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=700&q=80",
+        rating: 4.7,
+        bestTime: "August – April",
+        topFood: "Bamboo Shoot Pickle, Halasina Hannina Kadabu, Cardamom Chai",
+        secrets: "Railway track trek over ancient British bridges, 360-degree hilltop views at Manjarabad Star Fort.",
+        popularHighlights: ["Manjarabad Fort", "Bisle Ghat Viewpoint", "Jenukal Gudda", "Mookanamane Falls"]
+    },
+    {
+        id: "bandipur",
+        name: "Bandipur National Park",
+        district: "Chamarajanagar",
+        categories: ["nature", "wildlife", "adventure"],
+        img: "https://images.unsplash.com/photo-1534567153574-2b12153a87f0?auto=format&fit=crop&w=900&q=80",
+        description: "A flagship Project Tiger reserve where the Deccan Plateau meets the Western Ghats, featuring dry deciduous forests and thriving biodiversity.",
+        guideCount: 16,
+        spotterCount: 6,
+        liveStatus: "🐅 Gypsy Safaris Operating on Time",
+        livePhotoImg: "https://images.unsplash.com/photo-1534567153574-2b12153a87f0?auto=format&fit=crop&w=700&q=80",
+        rating: 4.7,
+        bestTime: "September – April",
+        topFood: "Traditional Kannada Oota, Maddur Vada, Ragi Mudde with Nati Koli Saaru",
+        secrets: "Gopalaswamy Betta mist-covered peak inside the tiger reserve with 700-year-old temple.",
+        popularHighlights: ["Open Gypsy Safari", "Gopalaswamy Betta Peak", "Moyar River Gorge", "Forest Interpretation Centre"]
     },
     {
         id: "mangalore",
         name: "Mangalore (Mangaluru)",
         district: "Dakshina Kannada",
         categories: ["beaches", "food", "heritage"],
-        img: "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=900&q=80",
-        description: "Vibrant coastal port city famous for its spicy Ghee Roast, surf schools, Roman Catholic chapels, and rich Tulu Nadu heritage.",
-        guideCount: 26,
-        rating: 4.9,
+        img: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=900&q=80",
+        description: "Coastal port city famed for pristine Sasihithlu surf beaches, legendary Ghee Roast seafood, and ancient Kadri Manjunatha temple.",
+        guideCount: 22,
+        spotterCount: 14,
+        liveStatus: "🏄 Surf Waves 1.2m · Sunny Coast",
+        livePhotoImg: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=700&q=80",
+        rating: 4.8,
         bestTime: "October – March",
-        topFood: "Chicken/Prawn Ghee Roast, Kori Rotti, Anjal Masala Fry, Pabba's Ice Cream (Gudbud)",
-        secrets: "Surfing lessons at Sasihithlu Beach, Aloysius Chapel's 19th-century Italian frescoes painted by Antony Moscheni.",
-        popularHighlights: ["Panambur Beach", "St. Aloysius Chapel", "Tannirbhavi Tree Park", "Kudroli Gokarnanatheshwara Temple"]
+        topFood: "Chicken Ghee Roast, Kori Rotti, Anjal Masala Fry, Pabba's Gadbad Ice Cream",
+        secrets: "Tannirbhavi floating bridge sunset, tasting 40+ ice cream varieties at original Pabba's parlour.",
+        popularHighlights: ["Panambur & Tannirbhavi Beach", "Kadri Manjunatha Temple", "St. Aloysius Chapel", "Sasihithlu Surf Spot"]
     },
     {
         id: "nandi-hills",
         name: "Nandi Hills",
         district: "Chikkaballapur",
-        categories: ["mountains", "adventure"],
-        img: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=900&q=80",
-        description: "Ancient fortress perched 4,850 ft high, famous for surreal sea-of-clouds sunrises, Tipu Sultan's summer lodge, and cycling trails.",
+        categories: ["mountains", "heritage", "adventure"],
+        img: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=900&q=80",
+        description: "Historic fortress hill perched 1,478m above sea level, famous for majestic cloud bed sunrises and Tipu Sultan's summer residence.",
         guideCount: 20,
-        rating: 4.6,
-        bestTime: "Year-round (Best for sunrise: 5:30 AM)",
-        topFood: "Nandi Valley Fresh Grapes, Crisp Masala Dosa, Filter Coffee",
-        secrets: "Bhoga Nandeeshwara temple at the hill base with 1000-year-old stepped kalyani tank, paragliding launches.",
-        popularHighlights: ["Tipu's Drop Viewpoint", "Sunrise Cloud Bed", "Bhoga Nandeeshwara Temple", "Amrita Sarovar"]
+        spotterCount: 15,
+        liveStatus: "☁️ 5:45 AM Cloud Bed Visible",
+        livePhotoImg: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=700&q=80",
+        rating: 4.7,
+        bestTime: "Year-Round (Best September – March)",
+        topFood: "Masala Chai with Nippattu, Sweet Corn, South Indian breakfast at foothill Darshinis",
+        secrets: "Bhoga Nandeeshwara temple at the foothills (1000 years old), cycling up the 40 hairpin curves at dawn.",
+        popularHighlights: ["Sunrise Viewpoint", "Tipu's Drop", "Bhoga Nandeeshwara Temple", "Amrith Sarovar Lake"]
     },
     {
         id: "bijapur",
         name: "Vijayapura (Bijapur)",
         district: "Vijayapura",
-        categories: ["heritage", "food"],
-        img: "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=900&q=80",
-        description: "Adil Shahi dynasty capital famous for the colossal Gol Gumbaz with its circular dome and acoustic whispering gallery.",
+        categories: ["heritage"],
+        img: "https://images.unsplash.com/photo-1513956589380-bad6acb9b9d4?auto=format&fit=crop&w=900&q=80",
+        description: "Medieval Deccan Sultanate capital home to Gol Gumbaz, possessing the second-largest unsupported dome in the world with whispering galleries.",
         guideCount: 14,
+        spotterCount: 6,
+        liveStatus: "🏛️ Gol Gumbaz Whispering Gallery Open",
+        livePhotoImg: "https://images.unsplash.com/photo-1513956589380-bad6acb9b9d4?auto=format&fit=crop&w=700&q=80",
         rating: 4.7,
         bestTime: "October – March",
-        topFood: "Jowar Rotti with Badanekayi Yennegai, North Karnataka Shenga Chutney, Sheermal",
-        secrets: "Whispering gallery in Gol Gumbaz where even the faintest whisper echoes 11 times across 38 meters.",
-        popularHighlights: ["Gol Gumbaz & Whispering Gallery", "Ibrahim Rauza", "Bara Kaman", "Malik-e-Maidan Cannon"]
-    },
-    {
-        id: "shivanasamudra",
-        name: "Shivanasamudra Falls",
-        district: "Mandya",
-        categories: ["nature", "adventure"],
-        img: "https://images.unsplash.com/photo-1546484396-fb3fc6f95f98?auto=format&fit=crop&w=900&q=80",
-        description: "Spectacular island town where the Kaveri river splits into two twin roaring waterfalls: Gaganachukki and Bharachukki.",
-        guideCount: 11,
-        rating: 4.7,
-        bestTime: "July – January",
-        topFood: "Fresh Kaveri River Fish Fry, Maddur Vada, Mandya Sugarcane Juice",
-        secrets: "Coracle boat rides up to the mist spray of Bharachukki falls, Asia's first hydroelectric power station (1902).",
-        popularHighlights: ["Gaganachukki Watchtower", "Bharachukki Cascade", "Ranganatha Swamy Temple", "Darga Viewpoint"]
+        topFood: "Bijapur Biryani, Shenga Poli, Jawari Rotti with Kaalu Saaru",
+        secrets: "Acoustic experiment: a single clap echoes 11 times in the Gol Gumbaz dome, stunning Ibrahim Rauza minarets.",
+        popularHighlights: ["Gol Gumbaz", "Ibrahim Rauza", "Bara Kaman", "Malik-e-Maidan Cannon"]
     },
     {
         id: "shravanabelagola",
@@ -306,35 +334,180 @@ const destinationsData = [
         district: "Hassan",
         categories: ["heritage"],
         img: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=900&q=80",
-        description: "Renowned Jain pilgrimage center home to the 57-foot monolithic statue of Lord Bahubali (Gommateshwara), carved in 981 AD.",
+        description: "World's most sacred Jain pilgrimage center featuring the 57-foot monolithic statue of Lord Bahubali (Gommateshwara), carved in 981 AD.",
         guideCount: 12,
+        spotterCount: 5,
+        liveStatus: "☀️ Steps Barefoot Friendly Till 11 AM",
+        livePhotoImg: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=700&q=80",
         rating: 4.8,
         bestTime: "October – March",
-        topFood: "Pure Satvik Jain Thali, Hassan Holige, Fresh Butter Milk",
-        secrets: "Climbing 650 rock steps of Vindhyagiri barefoot in early morning breeze for panoramic Deccan views.",
-        popularHighlights: ["Gommateshwara Monolith (Vindhyagiri)", "Chandragiri Hill Temples", "Kalyani Pond", "Ancient Epigraphs"]
+        topFood: "Pure Jain Thali, Sugarcane Juice, Tender Coconut, Hassan Jackfruit chips",
+        secrets: "Early morning 650-step climb before granite stones heat up in the afternoon sun.",
+        popularHighlights: ["Bahubali Monolithic Statue", "Vindhyagiri Hill", "Chandragiri Hill Basadis", "Kalyani Temple Tank"]
+    },
+    {
+        id: "pattadakal-aihole",
+        name: "Pattadakal & Aihole",
+        district: "Bagalkot",
+        categories: ["heritage"],
+        img: "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=900&q=80",
+        description: "The cradle of Indian temple architecture on the banks of Malaprabha River, showcasing a unique synthesis of Dravidian and Nagara styles.",
+        guideCount: 13,
+        spotterCount: 5,
+        liveStatus: "🏛️ Malaprabha River Banks Clear",
+        livePhotoImg: "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=700&q=80",
+        rating: 4.8,
+        bestTime: "October – March",
+        topFood: "North Karnataka Sajje Rotti, Stuffed Capsicum, Shenga Holige",
+        secrets: "Durga Temple with rare horseshoe apsidal plan in Aihole, astronomical carvings on Virupaksha temple ceiling.",
+        popularHighlights: ["Virupaksha Temple (Pattadakal)", "Durga Temple Complex (Aihole)", "Mallikarjuna Temple", "Lad Khan Temple"]
+    },
+    {
+        id: "chitradurga",
+        name: "Chitradurga Fort",
+        district: "Chitradurga",
+        categories: ["heritage", "adventure"],
+        img: "https://images.unsplash.com/photo-1513956589380-bad6acb9b9d4?auto=format&fit=crop&w=900&q=80",
+        description: "The legendary 'Kallina Kote' (Stone Fortress) with 7 concentric defensive fortification walls, 18 temples, and heroic lore of Onake Obavva.",
+        guideCount: 11,
+        spotterCount: 6,
+        liveStatus: "🏰 Fort Walk Open · Pleasant Morning",
+        livePhotoImg: "https://images.unsplash.com/photo-1513956589380-bad6acb9b9d4?auto=format&fit=crop&w=700&q=80",
+        rating: 4.7,
+        bestTime: "October – March",
+        topFood: "Chitradurga Benne Dosa, Mirchi Bajji, Kadabu",
+        secrets: "Hidden secret passage of Onake Obavva Kindi where a single brave woman defended the fort with a pestle.",
+        popularHighlights: ["7 Concentric Fort Walls", "Obavva Kindi", "Ekanatheshwari Temple", "Windmill Hills Viewpoint"]
     }
 ];
 
-// 2. EXPANDED VERIFIED LOCAL GUIDES DATASET (18+ GUIDES)
+// 2. REAL-TIME VERIFIED GROUND PHOTOS DATASET
+const livePhotosData = [
+    {
+        id: "p1",
+        destId: "jogfalls",
+        destName: "Jog Falls",
+        spotName: "Sharavathi Plunge Pool Viewpoint",
+        timeAgo: "8 mins ago",
+        statusBadge: "🌊 Heavy Water Surge",
+        img: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=700&q=80",
+        caption: "Water flow is thunderous today after heavy rains in Linganamakki catchment. Raja & Rani cascades full.",
+        author: "Vasant Bhat",
+        authorRole: "Local Sagara Guide",
+        avatar: "https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&w=150&q=80"
+    },
+    {
+        id: "p2",
+        destId: "hampi",
+        destName: "Hampi",
+        spotName: "Virupaksha Temple River Ghat",
+        timeAgo: "15 mins ago",
+        statusBadge: "☀️ Clear Skies · 24°C",
+        img: "https://images.unsplash.com/photo-1600100397608-f010e9a8d6b1?auto=format&fit=crop&w=700&q=80",
+        caption: "Tungabhadra river coracle rides are fully operational. Very light crowd at the temple complex right now.",
+        author: "Ravi Kumar",
+        authorRole: "ASI Heritage Guide",
+        avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"
+    },
+    {
+        id: "p3",
+        destId: "coorg",
+        destName: "Coorg (Madikeri)",
+        spotName: "Mandalpatti Peak Trailhead",
+        timeAgo: "26 mins ago",
+        statusBadge: "🌸 White Blossom Bloom",
+        img: "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=700&q=80",
+        caption: "Estates smelling like fresh jasmine! Jeep trails open to Mandalpatti peak with zero mud blockage.",
+        author: "Ananya Shetty",
+        authorRole: "Coffee Planter & Host",
+        avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80"
+    },
+    {
+        id: "p4",
+        destId: "gokarna",
+        destName: "Gokarna",
+        spotName: "Om Beach Cliffside Path",
+        timeAgo: "41 mins ago",
+        statusBadge: "✨ Calm Sea & Dolphins",
+        img: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=700&q=80",
+        caption: "Spotted 3 dolphins off Om Beach viewpoint! Cliff trek path to Half Moon beach is clean and dry.",
+        author: "Vikram Gowda",
+        authorRole: "Beach Trek Guide",
+        avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80"
+    }
+];
+
+// 3. VERIFIED LOCAL SPOTTERS & DIRECT CALL CONTACTS
+const localCallContacts = [
+    {
+        id: "c1",
+        name: "Ravi Kumar",
+        role: "Hampi Historian & Spotter",
+        destId: "hampi",
+        location: "Hampi, Vijayanagara",
+        phone: "+91 98801 24510",
+        languages: "Kannada, English, Hindi",
+        avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
+        status: "Available Now",
+        audioSnippet: "Namaskara! Hampi weather is super pleasant today, 24°C. River coracles running normally. Call or WhatsApp me anytime for crowd status at Virupaksha temple!"
+    },
+    {
+        id: "c2",
+        name: "Ananya Shetty",
+        role: "Estate Host & Spotter",
+        destId: "coorg",
+        location: "Madikeri, Coorg",
+        phone: "+91 94482 63319",
+        languages: "Kannada, English, Kodava",
+        avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80",
+        status: "Available Now",
+        audioSnippet: "Hello! Coffee blossoms are in full bloom across Madikeri this week. If you need estate homestay tips or road condition updates from Mysore road, I am here."
+    },
+    {
+        id: "c3",
+        name: "Vasant Bhat",
+        role: "Jog Falls Canyon Lead",
+        destId: "jogfalls",
+        location: "Sagara & Jog Falls",
+        phone: "+91 97412 89042",
+        languages: "Kannada, English, Hindi",
+        avatar: "https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&w=200&q=80",
+        status: "Available Now",
+        audioSnippet: "Namaskara! Jog Falls has 80% surge today. 1400 steps base path is open with guide accompaniment. Rain forecast light. Feel free to call for live water levels!"
+    },
+    {
+        id: "c4",
+        name: "Vikram Gowda",
+        role: "Gokarna Trek Lead",
+        destId: "gokarna",
+        location: "Gokarna, Uttara Kannada",
+        phone: "+91 98450 11234",
+        languages: "Kannada, English, Hindi",
+        avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80",
+        status: "Available Now",
+        audioSnippet: "Hey traveler! Arabian sea is calm at Kudle and Om beach today. Bioluminescence active late evening at Paradise beach. Ask me about cliff safety and boat rides."
+    }
+];
+
+// 4. VERIFIED GUIDES DIRECTORY DATASET
 const guidesData = [
     {
         id: "g1",
-        name: "Arjun Rao",
+        name: "Ravi Kumar",
         destinationId: "hampi",
         location: "Hampi, Vijayanagara",
         avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80",
         rating: 4.9,
         reviewsCount: 142,
-        specialties: ["Vijayanagara History", "Boulder Biking", "Sunset Trails", "Mythology"],
-        languages: ["Kannada", "English", "Telugu", "Hindi"],
+        specialties: ["History", "Architecture", "Sunset Treks", "Boulder Walks"],
+        languages: ["Kannada", "English", "Hindi"],
         priceDay: 2200,
         priceHour: 350,
-        badge: "Master Historian",
+        badge: "Govt Certified",
         verified: true,
         experience: "9 years",
-        bio: "Born and raised along the Tungabhadra river. I bring the stone ruins of the 14th century Vijayanagara Empire alive through royal folklore, secret architectural passages, and golden hour photography trails.",
-        tours: ["Complete Ruins & Hidden Temples (Full Day)", "Sunset Bouldering & Sanapur Lake Coracle Tour", "Vijayanagara Night Heritage Walk"]
+        bio: "Born and raised in Hampi. Certified ASI guide specializing in 14th century Vijayanagara empire history, sacred temple symbolism, and secret boulder viewpoints.",
+        tours: ["Virupaksha & Sacred Center Heritage Walk", "Matanga Hill Sunrise & Bouldering Path", "Hippie Island & Sanapur Lake Sunset Tour"]
     },
     {
         id: "g2",
@@ -342,17 +515,17 @@ const guidesData = [
         destinationId: "coorg",
         location: "Madikeri, Coorg",
         avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80",
-        rating: 4.8,
-        reviewsCount: 98,
-        specialties: ["Coffee Plantation Hikes", "Kodava Cuisine", "Birding", "Trekking"],
-        languages: ["Kodava", "Kannada", "English", "Hindi"],
-        priceDay: 2000,
-        priceHour: 300,
-        badge: "Estate Expert",
+        rating: 4.9,
+        reviewsCount: 118,
+        specialties: ["Coffee", "Plantations", "Kodava Cuisine", "Nature Trails"],
+        languages: ["Kannada", "English", "Kodava", "Hindi"],
+        priceDay: 2400,
+        priceHour: 380,
+        badge: "Estate Host",
         verified: true,
-        experience: "6 years",
-        bio: "3rd generation coffee planter. I host immersive estate walks showing bean-to-cup coffee processing, sacred grove explorations, and authentic Kodava cooking workshops in Madikeri.",
-        tours: ["Aromas of Kodagu: Coffee & Spice Walk", "Mandalpatti 4x4 Jeep Sunrise Safari", "Traditional Kodava Homestyle Cooking Demo"]
+        experience: "7 years",
+        bio: "3rd generation coffee planter in Madikeri. I offer hands-on coffee cupping, spice tasting, and insider visits to secluded waterfalls and authentic Kodava kitchens.",
+        tours: ["Artisan Coffee & Spice Estate Walk", "Mandalpatti 4x4 Dawn Jeep Expedition", "Kodava Culinary & Homestay Feast"]
     },
     {
         id: "g3",
@@ -360,261 +533,27 @@ const guidesData = [
         destinationId: "gokarna",
         location: "Gokarna, Uttara Kannada",
         avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
-        rating: 5.0,
-        reviewsCount: 164,
-        specialties: ["Cliff Trekking", "Bioluminescence Tours", "Surfing", "Beach Yoga"],
+        rating: 4.8,
+        reviewsCount: 95,
+        specialties: ["Trek", "Scuba", "Temple Lore", "Coastal Trails"],
         languages: ["Kannada", "English", "Hindi"],
-        priceDay: 2400,
-        priceHour: 400,
-        badge: "Adventure Leader",
+        priceDay: 2000,
+        priceHour: 300,
+        badge: "Coastal Lead",
         verified: true,
-        experience: "7 years",
-        bio: "Local coastal surfer and certified wilderness trekker. I guide travelers across 5 secluded beaches, hidden cliff lookout points, and night boat tours to witness glowing bioluminescent plankton.",
-        tours: ["5-Beach Cliffside Trek & Sunset Lookout", "Night Bioluminescence Boat Expedition", "Beginner Surfing & Tide Safety Session"]
+        experience: "6 years",
+        bio: "Local coastal hiker and storyteller. Leading guided cliffside walks connecting 5 famous beaches, secret caves, and evening bioluminescence expeditions.",
+        tours: ["5-Beach Cliffside Traverse", "Mahabaleshwar Temple & Heritage Walk", "Paradise Beach Night Bioluminescence Watch"]
     },
     {
         id: "g4",
-        name: "Priya Nair",
-        destinationId: "mysore",
-        location: "Mysuru",
-        avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80",
-        rating: 4.9,
-        reviewsCount: 210,
-        specialties: ["Royal Palace Heritage", "Silk & Sandalwood", "Street Food Safari", "Architecture"],
-        languages: ["Kannada", "English", "Tamil", "Hindi"],
-        priceDay: 1900,
-        priceHour: 300,
-        badge: "Super Guide",
-        verified: true,
-        experience: "11 years",
-        bio: "Former arts professor and Mysuru native. I host curated royal history trails through Mysore Palace, century-old sweet makers, and the bustling Devaraja spice bazaar.",
-        tours: ["Royal Mysore: Palace & Private Galleries", "Devaraja Market Dawn Heritage & Tasting", "Mysore Pak & Mylari Dosa Food Trail"]
-    },
-    {
-        id: "g5",
-        name: "Kiran Kumar",
-        destinationId: "chikmagalur",
-        location: "Chikmagalur",
-        avatar: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=300&q=80",
-        rating: 4.9,
-        reviewsCount: 115,
-        specialties: ["Mullayanagiri Trek", "Offbeat Waterfalls", "Wildlife Photography", "Camping"],
-        languages: ["Kannada", "English", "Hindi"],
-        priceDay: 2300,
-        priceHour: 350,
-        badge: "Trek Master",
-        verified: true,
-        experience: "8 years",
-        bio: "High-altitude trek leader certified by IMF. I specialize in scaling Karnataka's highest peaks, remote waterfalls deep inside coffee estates, and dark-sky astrophotography camps.",
-        tours: ["Mullayanagiri & Baba Budangiri Ridge Trek", "Hidden Estate Waterfalls & Off-road 4x4", "Ghats Night Camping & Stargazing"]
-    },
-    {
-        id: "g6",
-        name: "Megha Rao",
-        destinationId: "udupi",
-        location: "Udupi & Malpe",
-        avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80",
-        rating: 4.8,
-        reviewsCount: 88,
-        specialties: ["Temple Culture", "Coastal Mangrove Kayaking", "Udupi Veg Feasts", "Island Geology"],
-        languages: ["Tulu", "Kannada", "English", "Hindi"],
-        priceDay: 2000,
-        priceHour: 300,
-        badge: "Culture Curator",
-        verified: true,
-        experience: "5 years",
-        bio: "Tuluva heritage researcher and kayak guide. Join me for temple town morning rituals, St. Mary's volcanic geological secrets, and peaceful mangrove kayaking.",
-        tours: ["Krishna Mutt & Traditional Sattvic Feast", "St. Mary's Hexagonal Rocks Boat Tour", "Mangrove Forest Kayaking Safari"]
-    },
-    {
-        id: "g7",
-        name: "Santosh Naik",
-        destinationId: "murudeshwar",
-        location: "Murudeshwar & Netrani",
-        avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80",
-        rating: 4.9,
-        reviewsCount: 104,
-        specialties: ["Scuba Diving (PADI)", "Coastal Temples", "Marine Biology", "Deep Sea Boat"],
-        languages: ["Kannada", "Konkani", "English", "Hindi"],
-        priceDay: 2800,
-        priceHour: 450,
-        badge: "PADI Diver",
-        verified: true,
-        experience: "8 years",
-        bio: "PADI-certified Divemaster and coastal local. I guide underwater scuba expeditions at Netrani Island and show travelers hidden sea cliffs around Murudeshwar temple.",
-        tours: ["Netrani Island Scuba & Snorkel Trip", "Shiva Temple & Coastal Cliffs Walk", "Fresh Coastal Seafood & Tawa Fry Tasting"]
-    },
-    {
-        id: "g8",
-        name: "Manjunath Patil",
-        destinationId: "badami",
-        location: "Badami & Aihole",
-        avatar: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=300&q=80",
-        rating: 4.8,
-        reviewsCount: 76,
-        specialties: ["Chalukya Architecture", "Rock Climbing", "Cave Inscriptions", "Jowar Rotti Oota"],
-        languages: ["Kannada", "Hindi", "English"],
-        priceDay: 1800,
-        priceHour: 280,
-        badge: "Govt Certified",
-        verified: true,
-        experience: "12 years",
-        bio: "ASI certified Badami historian. I decode the intricate rock carvings of the 6th century caves, guide historical walks around Agastya lake, and introduce authentic North Karnataka rustic meals.",
-        tours: ["4 Rock Cave Temples Deep Dive", "Badami Fort & Agastya Lake Circuit", "North Karnataka Jolada Rotti Farm Feast"]
-    },
-    {
-        id: "g9",
-        name: "Dr. Arvind Hegde",
-        destinationId: "agumbe",
-        location: "Agumbe, Shivamogga",
-        avatar: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=300&q=80",
-        rating: 5.0,
-        reviewsCount: 92,
-        specialties: ["Rainforest Ecology", "Herpetology", "Canopy Treks", "Waterfall Hikes"],
-        languages: ["Kannada", "English"],
-        priceDay: 2600,
-        priceHour: 400,
-        badge: "Naturalist",
-        verified: true,
-        experience: "10 years",
-        bio: "Wildlife biologist and Western Ghats researcher. Experience rainforest ecology, nocturnal reptile walks, and stunning hidden water cascades with safety protocols.",
-        tours: ["Rainforest Canopy & Wildlife Track", "Barkana & Onake Abbi Falls Expedition", "Nocturnal Amphibian & Snake Walk"]
-    },
-    {
-        id: "g10",
-        name: "Somanna Kariappa",
-        destinationId: "kabini",
-        location: "Kabini, Mysuru",
-        avatar: "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=300&q=80",
-        rating: 4.9,
-        reviewsCount: 156,
-        specialties: ["Big Cat Tracking", "Elephant Behavior", "Boat Safaris", "Tribal Lore"],
-        languages: ["Kannada", "English", "Tamil", "Hindi"],
-        priceDay: 3000,
-        priceHour: 500,
-        badge: "Master Tracker",
-        verified: true,
-        experience: "14 years",
-        bio: "Indigenous forest tracker with over a decade of experience in Nagarhole & Kabini backwaters. Known for highest success rate in spotting leopards, wild dogs, and black panthers.",
-        tours: ["Dawn Tiger & Leopard Jungle Safari", "Sunset Kabini Backwaters Boat Cruise", "Forest Edge Birding & Tribal Flora Tour"]
-    },
-    {
-        id: "g11",
-        name: "Shweta Kulkarni",
-        destinationId: "belur-halebidu",
-        location: "Belur & Halebidu",
-        avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=300&q=80",
-        rating: 4.9,
-        reviewsCount: 84,
-        specialties: ["Hoysala Sculptures", "Epigraphy", "Dance Motifs", "Temple Geometry"],
-        languages: ["Kannada", "English", "Marathi", "Hindi"],
-        priceDay: 2100,
-        priceHour: 320,
-        badge: "Art Historian",
-        verified: true,
-        experience: "7 years",
-        bio: "Specialist in Hoysala temple iconography. I walk you through the astonishing 3D bracket figures (Madanikas), detailing 900-year-old stone filigree techniques.",
-        tours: ["Belur Chennakesava Iconography Walk", "Halebidu Hoysaleswara Twin Temple Tour", "Hassan Hoysala Heritage Road Trip"]
-    },
-    {
-        id: "g12",
-        name: "Naveen Poojary",
-        destinationId: "mangalore",
-        location: "Mangalore",
-        avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=300&q=80",
-        rating: 4.8,
-        reviewsCount: 120,
-        specialties: ["Ghee Roast Trails", "Surfing Coach", "Tuluva Traditions", "Old Mangalore"],
-        languages: ["Tulu", "Kannada", "English", "Hindi"],
-        priceDay: 2200,
-        priceHour: 350,
-        badge: "Culinary & Surf",
-        verified: true,
-        experience: "6 years",
-        bio: "Passionate foodie and surf instructor. I show travelers where locals eat the crispiest Kori Rotti, freshest sea fish fry, and catch the best morning waves at Sasihithlu.",
-        tours: ["Mangalore Ultimate Seafood & Ghee Roast Trail", "Morning Surf Class & Beach Safety", "Colonial Churches & Kudroli Temple Trail"]
-    },
-    {
-        id: "g13",
-        name: "Ramesh Shastri",
-        destinationId: "pattadakal-aihole",
-        location: "Pattadakal, Bagalkot",
-        avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80",
-        rating: 4.8,
-        reviewsCount: 65,
-        specialties: ["UNESCO Monument Walk", "Vedic Temple Design", "Malaprabha River Walks"],
-        languages: ["Kannada", "Sanskrit", "English", "Hindi"],
-        priceDay: 1900,
-        priceHour: 280,
-        badge: "Heritage Scholar",
-        verified: true,
-        experience: "15 years",
-        bio: "Sanskrit scholar and architectural guide who has guided international archaeological delegations across the 100+ temples of Aihole and Pattadakal complex.",
-        tours: ["Pattadakal UNESCO World Heritage Walk", "Aihole: 100 Temples Open Air Museum", "Rural North Karnataka Temple Village Circuit"]
-    },
-    {
-        id: "g14",
-        name: "Deepak Sharma",
-        destinationId: "nandi-hills",
-        location: "Nandi Hills, Chikkaballapur",
-        avatar: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=300&q=80",
-        rating: 4.7,
-        reviewsCount: 130,
-        specialties: ["Early Sunrise Cycles", "Tipu Sultan Forts", "Paragliding", "Bird Watching"],
-        languages: ["Kannada", "English", "Hindi"],
-        priceDay: 1800,
-        priceHour: 280,
-        badge: "Sunrise Guide",
-        verified: true,
-        experience: "5 years",
-        bio: "Cyclist and hill trekker. I organize early morning cycling ascents, sunrise viewpoints bypassing traffic jams, and heritage walks of Bhoga Nandeeshwara temple.",
-        tours: ["5:00 AM Sunrise & Cloud Sea Expedition", "Bhoga Nandeeshwara 1000-Year Heritage Walk", "Nandi Foothills Vineyards & Grape Tasting"]
-    },
-    {
-        id: "g15",
-        name: "Ismail Inamdar",
-        destinationId: "bijapur",
-        location: "Vijayapura",
-        avatar: "https://images.unsplash.com/photo-1513956589380-bad6acb9b9d4?auto=format&fit=crop&w=300&q=80",
-        rating: 4.8,
-        reviewsCount: 79,
-        specialties: ["Adil Shahi Architecture", "Gol Gumbaz Acoustics", "Islamic Calligraphy"],
-        languages: ["Urdu", "Kannada", "Hindi", "English"],
-        priceDay: 1800,
-        priceHour: 270,
-        badge: "Heritage Master",
-        verified: true,
-        experience: "13 years",
-        bio: "Specialist in Indo-Islamic medieval monuments. I demonstrate the incredible acoustic acoustics of Gol Gumbaz and unveil the architectural poetry of Ibrahim Rauza.",
-        tours: ["Gol Gumbaz Acoustic & Dome Exploration", "Ibrahim Rauza: The Black Taj of the South", "Old Bijapur Bazaars & Traditional Crafts"]
-    },
-    {
-        id: "g16",
-        name: "Pradeep Gowda",
-        destinationId: "kudremukh",
-        location: "Kudremukh, Chikkamagaluru",
-        avatar: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=300&q=80",
-        rating: 4.9,
-        reviewsCount: 110,
-        specialties: ["Kudremukh Peak Trek", "Wilderness First Aid", "Shola Forest Ecology"],
-        languages: ["Kannada", "English", "Hindi"],
-        priceDay: 2500,
-        priceHour: 380,
-        badge: "Wilderness Lead",
-        verified: true,
-        experience: "8 years",
-        bio: "Certified Wilderness First Responder and licensed Kudremukh forest guide. I lead guided ascents up the 1894m peak while maintaining strict zero-waste eco standards.",
-        tours: ["Kudremukh 22km Peak Ascent & Permits", "Hanuman Gundi Waterfall Trek", "Shola Grassland Eco-Photography Tour"]
-    },
-    {
-        id: "g17",
         name: "Vasant Bhat",
         destinationId: "jogfalls",
         location: "Jog Falls & Sagara",
         avatar: "https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&w=300&q=80",
         rating: 4.7,
         reviewsCount: 58,
-        specialties: ["Waterfall Canyon Descent", "Sharavathi Valley", "Monsoon Treks"],
+        specialties: ["Trek", "Nature", "Waterfall Canyon Descent"],
         languages: ["Kannada", "English", "Hindi"],
         priceDay: 1700,
         priceHour: 250,
@@ -622,99 +561,47 @@ const guidesData = [
         verified: true,
         experience: "9 years",
         bio: "Lifelong resident of Sagara. I guide travelers to the base of Jog Falls, secret viewpoint bungalows from the colonial era, and serene Sharavathi river islands.",
-        tours: ["Jog Falls 1400 Steps Base Descent", "Sharavathi Valley Backwaters & Boat Cruise", "Monsoon Rainforest & Wild Stream Trek"]
+        tours: ["Jog Falls 1400 Steps Base Descent", "Sharavathi Valley Backwaters & Boat Cruise", "Monsoon Rainforest & Stream Trek"]
     },
     {
-        id: "g18",
-        name: "Ganesh Acharya",
-        destinationId: "shravanabelagola",
-        location: "Shravanabelagola & Hassan",
-        avatar: "https://images.unsplash.com/photo-1463453091185-61582044d556?auto=format&fit=crop&w=300&q=80",
-        rating: 4.8,
-        reviewsCount: 82,
-        specialties: ["Jain Epigraphy", "Vindhyagiri Hill Ascent", "Mahamastakabhisheka Lore"],
-        languages: ["Kannada", "English", "Hindi"],
-        priceDay: 1800,
-        priceHour: 260,
-        badge: "Sacred Historian",
+        id: "g5",
+        name: "Somanna Kariappa",
+        destinationId: "kabini",
+        location: "Kabini, Mysuru",
+        avatar: "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=300&q=80",
+        rating: 4.9,
+        reviewsCount: 156,
+        specialties: ["Wildlife", "Trek", "Big Cat Tracking", "Elephant Lore"],
+        languages: ["Kannada", "English", "Tamil", "Hindi"],
+        priceDay: 3000,
+        priceHour: 500,
+        badge: "Master Tracker",
         verified: true,
-        experience: "11 years",
-        bio: "Historian specializing in ancient Kannada and Prakrit inscriptions on Vindhyagiri and Chandragiri hills. I share the profound spiritual history of Lord Bahubali.",
-        tours: ["Vindhyagiri Monolith Sunrise Pilgrimage Walk", "Chandragiri Hill Ancient Basadis & Inscriptions", "Hassan Rural Temple Circuit"]
+        experience: "14 years",
+        bio: "Indigenous forest tracker with over a decade of experience in Nagarhole & Kabini backwaters. Known for highest success rate in spotting leopards and elephants.",
+        tours: ["Dawn Tiger & Leopard Jungle Safari", "Sunset Kabini Backwaters Boat Cruise", "Forest Edge Birding & Tribal Flora Tour"]
+    },
+    {
+        id: "g6",
+        name: "Prashanth Shetty",
+        destinationId: "chikmagalur",
+        location: "Chikmagalur",
+        avatar: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=300&q=80",
+        rating: 4.8,
+        reviewsCount: 88,
+        specialties: ["Coffee", "Trek", "Mullayanagiri Peak", "Malnad Food"],
+        languages: ["Kannada", "English", "Hindi"],
+        priceDay: 2100,
+        priceHour: 320,
+        badge: "Peak Guide",
+        verified: true,
+        experience: "8 years",
+        bio: "Mullayanagiri summit lead. I arrange sunrise peak climbs with zero crowd congestion and organize tastings of single-estate Arabicas.",
+        tours: ["Mullayanagiri Cloud Sea Sunrise Hike", "Baba Budangiri Historical Caves Tour", "Chikmagalur Coffee Estate Trail & Tasting"]
     }
 ];
 
-// 3. LIVE LOCAL COMMUNITY UPDATES (REAL-TIME TRAVEL INTELLIGENCE)
-const liveUpdatesData = [
-    {
-        destination: "Hampi",
-        tag: "Weather & Trails",
-        status: "good",
-        statusText: "🟢 Clear & Ideal",
-        time: "15 mins ago",
-        title: "Bouldering trails & Sanapur Lake clear today",
-        message: "Early morning temp is a pleasant 23°C. Tungabhadra coracle services operational. Sunset at Matanga hill expected to be spectacular with zero cloud cover.",
-        author: "Arjun Rao",
-        avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"
-    },
-    {
-        destination: "Coorg",
-        tag: "Blossom Season",
-        status: "seasonal",
-        statusText: "🌸 White Coffee Blossom",
-        time: "42 mins ago",
-        title: "Coffee blossom showers started in Madikeri & Somwarpet",
-        message: "Sprawling estates are turning white with fragrant jasmine-like coffee blossoms following yesterday's pre-monsoon showers. Perfect week for plantation walks!",
-        author: "Ananya Shetty",
-        avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80"
-    },
-    {
-        destination: "Gokarna",
-        tag: "Night Wildlife",
-        status: "good",
-        statusText: "✨ Active Tonight",
-        time: "1 hour ago",
-        title: "Bioluminescent algae spotted at Paradise & Half Moon beach",
-        message: "Clear new-moon waters with high visibility. Glowing blue waves observed between 8:30 PM and 11 PM on the south cliffside rocks.",
-        author: "Vikram Gowda",
-        avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80"
-    },
-    {
-        destination: "Kabini",
-        tag: "Safari Sighting",
-        status: "good",
-        statusText: "🐅 Big Cat Alert",
-        time: "2 hours ago",
-        title: "Tigress with 2 cubs spotted at Zone B waterhole",
-        message: "Both morning boat safari and jeep safari had direct sightings. Herd of 40+ wild elephants currently feeding along the Kabini river meadow.",
-        author: "Somanna Kariappa",
-        avatar: "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=150&q=80"
-    },
-    {
-        destination: "Agumbe",
-        tag: "Trail Advisory",
-        status: "alert",
-        statusText: "⚠️ Rain & Leech Alert",
-        time: "3 hours ago",
-        title: "Heavy mist on Agumbe Ghat; carry leech socks",
-        message: "Visibility on hairpin curves under 50 meters in late evenings. Forest department requires licensed guides for Barkana falls entry.",
-        author: "Dr. Arvind Hegde",
-        avatar: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=150&q=80"
-    },
-    {
-        destination: "Murudeshwar",
-        tag: "Sea Condition",
-        status: "good",
-        statusText: "🤿 15m Visibility",
-        time: "4 hours ago",
-        title: "Netrani Island scuba dives 100% operational",
-        message: "Calm Arabian sea conditions. Coral reef sightings include sea turtles, parrotfish, and harmless blacktip reef sharks.",
-        author: "Santosh Naik",
-        avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=150&q=80"
-    }
-];
-
-// 4. STATE MANAGEMENT & DOM SELECTION
+// 5. STATE MANAGEMENT
 let selectedCategory = "all";
 let selectedGuideSpecialty = "all";
 let currentSearchQuery = "";
@@ -724,7 +611,8 @@ let wishlist = JSON.parse(localStorage.getItem("guido_wishlist") || "[]");
 // DOM Elements
 const destinationGrid = document.querySelector("#destinationGrid");
 const guidesGrid = document.querySelector("#guidesGrid");
-const liveFeedGrid = document.querySelector("#liveFeedGrid");
+const livePhotosGrid = document.querySelector("#livePhotosGrid");
+const callSpottersGrid = document.querySelector("#callSpottersGrid");
 const searchInput = document.querySelector("#placeSearch");
 const searchButton = document.querySelector("#searchButton");
 const clearButton = document.querySelector("#clearButton");
@@ -734,34 +622,82 @@ const guideFilterButtons = [...document.querySelectorAll(".guide-filter-btn")];
 const noResults = document.querySelector("#noResults");
 const searchResultsCount = document.querySelector("#searchResultsCount");
 const totalDestCountEl = document.querySelector("#totalDestCount");
-const totalGuidesCountEl = document.querySelector("#totalGuidesCount");
+const totalSpottersCountEl = document.querySelector("#totalSpottersCount");
 const wishlistCountEls = document.querySelectorAll(".wishlist-count");
 const wishlistDrawer = document.querySelector("#wishlistDrawer");
 const wishlistItemsList = document.querySelector("#wishlistItemsList");
 
 // Modals
+const requestPhotoModal = document.querySelector("#requestPhotoModal");
+const callLocalModal = document.querySelector("#callLocalModal");
 const destinationModal = document.querySelector("#destinationModal");
 const guideProfileModal = document.querySelector("#guideProfileModal");
 const bookGuideModal = document.querySelector("#bookGuideModal");
 const becomeGuideModal = document.querySelector("#becomeGuideModal");
 const toastContainer = document.querySelector("#toastContainer");
 
-// ==========================================
+// =========================================================
 // RENDER FUNCTIONS
-// ==========================================
+// =========================================================
 
-// 1. Render Destination Cards
+// 1. Render Live Ground Photo Radar Stream
+function renderLivePhotos() {
+    if (!livePhotosGrid) return;
+
+    livePhotosGrid.innerHTML = livePhotosData.map(photo => `
+        <article class="live-photo-card" data-dest="${photo.destId}">
+            <div class="live-photo-img-wrap">
+                <img src="${photo.img}" alt="${photo.spotName}" loading="lazy">
+                <span class="live-condition-badge">${photo.statusBadge}</span>
+                <span class="live-time-ago">⏱️ ${photo.timeAgo}</span>
+            </div>
+            <div class="live-photo-content">
+                <span class="live-photo-location">📍 ${photo.destName}</span>
+                <h3 class="live-photo-title">${photo.spotName}</h3>
+                <p class="live-photo-desc">${photo.caption}</p>
+                <div class="live-photo-footer">
+                    <div class="spotter-tag">
+                        <img src="${photo.avatar}" alt="${photo.author}">
+                        <span>${photo.author}</span>
+                    </div>
+                    <button class="btn-request-same-spot" onclick="openRequestPhotoModal('${photo.destId}')" type="button">
+                        Request Update 📸
+                    </button>
+                </div>
+            </div>
+        </article>
+    `).join("");
+}
+
+// 2. Render Call Spotters Dial Cards
+function renderCallSpotters() {
+    if (!callSpottersGrid) return;
+
+    callSpottersGrid.innerHTML = localCallContacts.map(contact => `
+        <div class="quick-call-card">
+            <div class="spotter-header">
+                <img src="${contact.avatar}" alt="${contact.name}">
+                <div class="spotter-info">
+                    <h4>${contact.name}</h4>
+                    <span>📍 ${contact.location}</span>
+                </div>
+            </div>
+            <p style="font-size:12px;color:#64748b;margin:0;">🗣️ ${contact.languages}</p>
+            <button class="btn-dial-now" onclick="openCallModal('${contact.id}')" type="button">
+                <span>📞</span> Quick Call / Ask Question
+            </button>
+        </div>
+    `).join("");
+}
+
+// 3. Render 22 Destinations with 3-Tier Action Buttons
 function renderDestinations() {
     if (!destinationGrid) return;
 
-    let filtered = destinationsData.filter((dest) => {
-        const matchesCategory =
-            selectedCategory === "all" ||
-            dest.categories.includes(selectedCategory);
-
+    let filtered = destinationsData.filter(dest => {
+        const matchesCategory = selectedCategory === "all" || dest.categories.includes(selectedCategory);
         const q = currentSearchQuery.toLowerCase().trim();
-        const matchesQuery =
-            q === "" ||
+        const matchesQuery = q === "" ||
             dest.name.toLowerCase().includes(q) ||
             dest.district.toLowerCase().includes(q) ||
             dest.categories.some(c => c.toLowerCase().includes(q)) ||
@@ -773,14 +709,13 @@ function renderDestinations() {
 
     // Sorting
     if (currentSort === "popular") {
-        filtered.sort((a, b) => b.guideCount - a.guideCount);
+        filtered.sort((a, b) => b.spotterCount - a.spotterCount);
     } else if (currentSort === "rating") {
         filtered.sort((a, b) => b.rating - a.rating);
     } else if (currentSort === "name") {
         filtered.sort((a, b) => a.name.localeCompare(b.name));
     }
 
-    // Update Counts
     if (searchResultsCount) {
         searchResultsCount.textContent = `Showing ${filtered.length} of ${destinationsData.length} Karnataka destinations`;
     }
@@ -793,20 +728,20 @@ function renderDestinations() {
 
     if (noResults) noResults.style.display = "none";
 
-    destinationGrid.innerHTML = filtered.map((dest) => {
+    destinationGrid.innerHTML = filtered.map(dest => {
         const isFav = wishlist.includes(dest.id);
-        const catBadges = dest.categories.map(c => `<span class="cat-pill">${c.toUpperCase()}</span>`).join("");
         
         return `
-            <article class="destination-card" data-id="${dest.id}" data-category="${dest.categories.join(' ')}">
+            <article class="destination-card" data-id="${dest.id}">
                 <div class="card-image-wrap">
                     <img src="${dest.img}" alt="${dest.name}" loading="lazy">
                     <span class="badge-district">${dest.district}</span>
-                    <button class="btn-fav ${isFav ? 'active' : ''}" data-id="${dest.id}" type="button" title="Save to Wishlist" aria-label="Favorite ${dest.name}">
+                    <span class="live-indicator-chip"><span class="pulse-dot"></span> ${dest.spotterCount} Active</span>
+                    <button class="btn-fav ${isFav ? 'active' : ''}" data-id="${dest.id}" type="button" title="Save" aria-label="Favorite ${dest.name}">
                         ${isFav ? '❤️' : '🤍'}
                     </button>
-                    <div class="category-tags-overlay">${catBadges}</div>
                 </div>
+                
                 <div class="destination-info">
                     <h3>${dest.name}</h3>
                     <p>${dest.description}</p>
@@ -814,15 +749,20 @@ function renderDestinations() {
                     <div class="destination-meta-chips">
                         <div class="meta-chip"><span>⭐</span> <strong>${dest.rating}</strong></div>
                         <div class="meta-chip"><span>🗓️</span> ${dest.bestTime.split('–')[0].trim()}</div>
-                        <div class="meta-chip"><span>🍛</span> ${dest.topFood.split(',')[0]}</div>
+                        <div class="meta-chip" style="background:#ecfdf5;color:#047857;"><span>⚡</span> ${dest.liveStatus.substring(0, 20)}...</div>
                     </div>
 
-                    <div class="card-bottom">
-                        <span class="guide-count-badge" data-dest="${dest.id}">
-                            <span>👥</span> <strong>${dest.guideCount} Guides</strong>
-                        </span>
-                        <button class="btn-explore" data-id="${dest.id}" type="button">
-                            Explore →
+                    <!-- 3-TIER CORE ACTION BUTTONS -->
+                    <div class="card-tier-actions">
+                        <button class="btn-card-action btn-action-photo" onclick="openRequestPhotoModal('${dest.id}')" type="button">
+                            <span>📸</span> Live Photo
+                        </button>
+                        <button class="btn-card-action btn-action-call" onclick="openCallForDestination('${dest.id}')" type="button">
+                            <span>📞</span> Call Local
+                        </button>
+                        <button class="btn-card-action btn-action-guide-full" onclick="openDestinationModal('${dest.id}')" type="button">
+                            <span>🧭 Explore & Guides (${dest.guideCount})</span>
+                            <span>→</span>
                         </button>
                     </div>
                 </div>
@@ -833,28 +773,27 @@ function renderDestinations() {
     attachDestinationCardListeners();
 }
 
-// 2. Render Guides Directory Cards
+// 4. Render Guides Directory
 function renderGuides() {
     if (!guidesGrid) return;
 
-    let filtered = guidesData.filter((guide) => {
+    let filtered = guidesData.filter(guide => {
         if (selectedGuideSpecialty === "all") return true;
         return guide.specialties.some(s => s.toLowerCase().includes(selectedGuideSpecialty.toLowerCase())) ||
                guide.destinationId === selectedGuideSpecialty;
     });
 
-    guidesGrid.innerHTML = filtered.map((guide) => {
+    guidesGrid.innerHTML = filtered.map(guide => {
         const skills = guide.specialties.map(s => `<span class="skill-pill">${s}</span>`).join("");
-        const languages = guide.languages.join(", ");
-
+        
         return `
-            <article class="guide-profile" data-id="${guide.id}" data-dest="${guide.destinationId}">
+            <article class="guide-profile" data-id="${guide.id}">
                 <div class="guide-card-top">
                     <img class="guide-avatar-img" src="${guide.avatar}" alt="${guide.name}" loading="lazy">
                     <div class="guide-header-info">
                         <div class="guide-name-row">
                             <h3>${guide.name}</h3>
-                            <span class="verified-badge" title="Verified Local Guide">✓</span>
+                            <span class="verified-badge">✓</span>
                         </div>
                         <span class="guide-location-tag">📍 ${guide.location}</span>
                         <div class="guide-score-row">
@@ -864,53 +803,18 @@ function renderGuides() {
                     </div>
                 </div>
 
-                <p class="guide-bio">${guide.bio.substring(0, 110)}...</p>
-
+                <p class="guide-bio">${guide.bio.substring(0, 115)}...</p>
                 <div class="guide-skills-pills">${skills}</div>
-
-                <div class="guide-languages">
-                    <span>🗣️ Speaks:</span> <strong>${languages}</strong>
-                </div>
+                <div class="guide-languages">🗣️ Speaks: <strong>${guide.languages.join(", ")}</strong></div>
 
                 <div class="guide-card-footer">
                     <div class="guide-price">
                         <strong>₹${guide.priceDay}</strong>
-                        <span>per day · ₹${guide.priceHour}/hr</span>
+                        <span>per day</span>
                     </div>
                     <div class="guide-actions">
-                        <button class="guide-view-btn" data-guide-id="${guide.id}" type="button">View Profile</button>
-                        <button class="guide-book-quick-btn" data-guide-id="${guide.id}" type="button">Book</button>
-                    </div>
-                </div>
-            </article>
-        `;
-    }).join("");
-
-    attachGuideCardListeners();
-}
-
-// 3. Render Live Local Updates Feed
-function renderLiveUpdates() {
-    if (!liveFeedGrid) return;
-
-    liveFeedGrid.innerHTML = liveUpdatesData.map((item) => {
-        let statusClass = "status-good";
-        if (item.status === "alert") statusClass = "status-alert";
-        if (item.status === "seasonal") statusClass = "status-seasonal";
-
-        return `
-            <article class="live-card">
-                <div class="live-card-top">
-                    <span class="live-badge-status ${statusClass}">${item.statusText}</span>
-                    <span class="live-time">${item.time}</span>
-                </div>
-                <h4>${item.destination}: ${item.title}</h4>
-                <p>${item.message}</p>
-                <div class="live-author">
-                    <img src="${item.avatar}" alt="${item.author}">
-                    <div>
-                        <span>${item.author}</span>
-                        <small>Verified Local Guide · ${item.destination}</small>
+                        <button class="guide-view-btn" onclick="openGuideProfileModal('${guide.id}')" type="button">View Profile</button>
+                        <button class="guide-book-quick-btn" onclick="openBookGuideModal('${guide.id}')" type="button">Book Guide</button>
                     </div>
                 </div>
             </article>
@@ -918,7 +822,7 @@ function renderLiveUpdates() {
     }).join("");
 }
 
-// 4. Update Header Counts
+// 5. Update Category Counts
 function updateCategoryCounts() {
     categoryButtons.forEach(btn => {
         const cat = btn.dataset.category;
@@ -928,28 +832,169 @@ function updateCategoryCounts() {
         if (cat === "all") {
             countSpan.textContent = destinationsData.length;
         } else {
-            const count = destinationsData.filter(d => d.categories.includes(cat)).length;
-            countSpan.textContent = count;
+            countSpan.textContent = destinationsData.filter(d => d.categories.includes(cat)).length;
         }
     });
 
     if (totalDestCountEl) totalDestCountEl.textContent = `${destinationsData.length}+`;
-    if (totalGuidesCountEl) totalGuidesCountEl.textContent = `${guidesData.length * 15}+`;
+    if (totalSpottersCountEl) totalSpottersCountEl.textContent = `${destinationsData.reduce((acc, d) => acc + d.spotterCount, 0)}+`;
 }
 
-// ==========================================
-// INTERACTIVE MODALS & ACTIONS
-// ==========================================
+// =========================================================
+// INTERACTIVE MODALS (LIVE PHOTO, LOCAL CALL, GUIDES)
+// =========================================================
 
-// Open Destination Detail Modal
-function openDestinationModal(destId) {
+// 1. OPEN LIVE PHOTO REQUEST MODAL
+window.openRequestPhotoModal = function(destId) {
+    closeAllModals();
+    if (!requestPhotoModal) return;
+
+    const modalBody = requestPhotoModal.querySelector(".modal-body");
+    const currentDest = destinationsData.find(d => d.id === destId) || destinationsData[0];
+
+    modalBody.innerHTML = `
+        <span class="modal-subtitle">📸 INSTANT ON-GROUND PROOF</span>
+        <h2 style="font-size:26px;font-weight:900;margin:6px 0 8px;">Request a Live Photo of Any Spot</h2>
+        <p style="color:var(--text-muted);margin-bottom:20px;font-size:14.5px;">Get an active local spotter to take and upload a real-time ground photo within 5-10 minutes.</p>
+
+        <form class="custom-form" onsubmit="handleLivePhotoSubmit(event, '${currentDest.id}')">
+            <div>
+                <label class="form-label">Select Karnataka Destination</label>
+                <select class="form-control" id="reqPhotoDest" onchange="updatePhotoPresetSpots(this.value)">
+                    ${destinationsData.map(d => `<option value="${d.id}" ${d.id === currentDest.id ? 'selected' : ''}>${d.name} (${d.district}) — ${d.spotterCount} spotters online</option>`).join('')}
+                </select>
+            </div>
+
+            <div>
+                <label class="form-label">Specific Landmark / Spot to Check</label>
+                <input class="form-control" id="reqPhotoSpot" type="text" placeholder="e.g. Abbey Falls Water Surge, Virupaksha Temple Queue, Om Beach Sunset" value="${currentDest.popularHighlights[0]}" required>
+            </div>
+
+            <div class="form-row-2">
+                <div>
+                    <label class="form-label">What do you want to verify?</label>
+                    <select class="form-control" id="reqPhotoReason">
+                        <option value="weather">☀️ Current Weather & Cloud Sea</option>
+                        <option value="waterfall">🌊 Waterfall Surge & Water Level</option>
+                        <option value="crowd">👥 Crowd Level & Ticket Queue</option>
+                        <option value="bloom">🌸 Blossom & Flower Season</option>
+                        <option value="road">🚗 Road / Ghat Trail Condition</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="form-label">Urgency</label>
+                    <select class="form-control">
+                        <option>⚡ Immediate (Next 5-10 mins)</option>
+                        <option>🕒 Today Evening</option>
+                        <option>🌅 Tomorrow Morning</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="dispatch-progress-box" id="dispatchBox">
+                <div class="dispatch-radar-circle">📡</div>
+                <h4 style="text-align:center;font-size:16px;color:var(--dark);margin-bottom:4px;">Broadcasting Request to Local Spotters...</h4>
+                <p style="text-align:center;font-size:13px;color:var(--text-muted);" id="dispatchMsg">Pinging active spotters in ${currentDest.name}...</p>
+            </div>
+
+            <button class="form-submit-btn" id="btnSubmitPhotoReq" type="submit">
+                📡 Dispatch Live Photo Request (Free) →
+            </button>
+        </form>
+    `;
+
+    requestPhotoModal.classList.add("active");
+};
+
+// Update preset spot helper
+window.updatePhotoPresetSpots = function(destId) {
+    const dest = destinationsData.find(d => d.id === destId);
+    const spotInput = document.querySelector("#reqPhotoSpot");
+    if (dest && spotInput) {
+        spotInput.value = dest.popularHighlights[0];
+    }
+};
+
+// Handle Live Photo Submission
+window.handleLivePhotoSubmit = function(e, destId) {
+    e.preventDefault();
+    const destSelect = document.querySelector("#reqPhotoDest").value;
+    const spot = document.querySelector("#reqPhotoSpot").value;
+    const dest = destinationsData.find(d => d.id === destSelect) || destinationsData[0];
+
+    const dispatchBox = document.querySelector("#dispatchBox");
+    const dispatchMsg = document.querySelector("#dispatchMsg");
+    const submitBtn = document.querySelector("#btnSubmitPhotoReq");
+
+    dispatchBox.style.display = "block";
+    submitBtn.style.display = "none";
+
+    setTimeout(() => {
+        dispatchMsg.innerHTML = `🟢 <strong>${dest.spotterCount} spotters in ${dest.name} notified!</strong> Ganesh & Ravi accepted your request.`;
+    }, 1200);
+
+    setTimeout(() => {
+        closeAllModals();
+        showToast(`📸 Live Photo Request Dispatched! Spotters at ${spot} are capturing the photo. You will receive an instant notification.`);
+    }, 2800);
+};
+
+// 2. OPEN INSTANT LOCAL CALL & ENQUIRY MODAL
+window.openCallModal = function(contactId) {
+    closeAllModals();
+    if (!callLocalModal) return;
+
+    const modalBody = callLocalModal.querySelector(".modal-body");
+    const contact = localCallContacts.find(c => c.id === contactId) || localCallContacts[0];
+
+    modalBody.innerHTML = `
+        <div class="call-simulator-screen">
+            <img class="call-avatar-pulse" src="${contact.avatar}" alt="${contact.name}">
+            <div class="call-status-text">🟢 DIRECT AUDIO CALL CONNECTED</div>
+            <div class="call-name-text">${contact.name}</div>
+            <div class="call-location-text">📍 ${contact.location} · 🗣️ ${contact.languages}</div>
+            
+            <div class="call-audio-box">
+                <strong style="color:#86efac;display:block;font-size:12px;margin-bottom:4px;">📻 LOCAL VOICE RESPONSE / LIVE ADVICE:</strong>
+                <p>"${contact.audioSnippet}"</p>
+            </div>
+
+            <div class="call-actions-row">
+                <a class="btn-whatsapp-direct" href="https://wa.me/919880124510?text=Hi%20${contact.name},%20I%20saw%20your%20profile%20on%20Guido.%20Can%20I%20ask%20about%20current%20conditions%20in%20${contact.location}?" target="_blank">
+                    <span>💬</span> Continue on WhatsApp
+                </a>
+                <button class="btn-end-call" onclick="closeAllModals()" type="button">
+                    <span>🔴</span> End Call
+                </button>
+            </div>
+        </div>
+
+        <div style="background:#f8fafc;padding:16px;border-radius:var(--radius-sm);border:1px solid var(--border-color);">
+            <strong style="font-size:13px;color:var(--dark);display:block;margin-bottom:8px;">💡 Popular Questions to ask ${contact.name}:</strong>
+            <ul style="font-size:13px;color:#475569;line-height:1.6;padding-left:18px;">
+                <li>"Is the Ghat road clear of mist/traffic today?"</li>
+                <li>"What is the best time this week to visit without huge crowds?"</li>
+                <li>"Where do locals eat authentic regional food nearby?"</li>
+            </ul>
+        </div>
+    `;
+
+    callLocalModal.classList.add("active");
+};
+
+// Open call for specific destination
+window.openCallForDestination = function(destId) {
+    const contact = localCallContacts.find(c => c.destId === destId) || localCallContacts[0];
+    openCallModal(contact.id);
+};
+
+// 3. OPEN DESTINATION MODAL
+window.openDestinationModal = function(destId) {
     const dest = destinationsData.find(d => d.id === destId);
     if (!dest || !destinationModal) return;
 
     const modalBody = destinationModal.querySelector(".modal-body");
     const matchingGuides = guidesData.filter(g => g.destinationId === destId);
-
-    // If no exact match in mock, pick closest 2
     const displayGuides = matchingGuides.length > 0 ? matchingGuides : guidesData.slice(0, 3);
 
     const guidesHtml = displayGuides.map(g => `
@@ -967,8 +1012,6 @@ function openDestinationModal(destId) {
         </div>
     `).join("");
 
-    const highlightsList = dest.popularHighlights.map(h => `<li>✨ ${h}</li>`).join("");
-
     modalBody.innerHTML = `
         <img class="modal-hero-img" src="${dest.img}" alt="${dest.name}">
         <div class="modal-header-row" style="margin-top:20px;">
@@ -982,13 +1025,21 @@ function openDestinationModal(destId) {
         </div>
 
         <div class="modal-tabs">
-            <button class="modal-tab-btn active" onclick="switchModalTab(event, 'tab-overview')">Overview & Local Tips</button>
+            <button class="modal-tab-btn active" onclick="switchModalTab(event, 'tab-overview')">Live Status & Overview</button>
             <button class="modal-tab-btn" onclick="switchModalTab(event, 'tab-guides')">Local Guides (${dest.guideCount})</button>
-            <button class="modal-tab-btn" onclick="switchModalTab(event, 'tab-plan')">Highlights & Food</button>
+            <button class="modal-tab-btn" onclick="switchModalTab(event, 'tab-plan')">Highlights & Secrets</button>
         </div>
 
         <div id="tab-overview" class="modal-tab-content active">
-            <p style="font-size:16px;color:#334155;line-height:1.7;margin-bottom:20px;">${dest.description}</p>
+            <div style="background:#ecfdf5;border:1px solid #a7f3d0;padding:12px 16px;border-radius:var(--radius-sm);margin-bottom:16px;display:flex;align-items:center;justify-content:space-between;">
+                <div>
+                    <strong style="color:#047857;font-size:14px;display:block;">⚡ Live Condition: ${dest.liveStatus}</strong>
+                    <span style="font-size:12.5px;color:#065f46;">${dest.spotterCount} verified spotters active right now</span>
+                </div>
+                <button class="primary-btn" style="padding:6px 12px;font-size:12px;background:#059669;" onclick="openRequestPhotoModal('${dest.id}')">Request Live Photo 📸</button>
+            </div>
+
+            <p style="font-size:15.5px;color:#334155;line-height:1.65;margin-bottom:20px;">${dest.description}</p>
             
             <div class="detail-info-grid">
                 <div class="detail-card-small">
@@ -1005,9 +1056,9 @@ function openDestinationModal(destId) {
                 </div>
             </div>
 
-            <div style="display:flex;gap:12px;margin-top:20px;">
-                <button class="primary-btn" onclick="switchModalTabDirect('tab-guides')">View Verified Local Guides (${dest.guideCount}) →</button>
-                <button class="secondary-btn" style="color:var(--dark);border-color:var(--border-color);" onclick="filterToDestination('${dest.id}')">Filter Main Feed</button>
+            <div style="display:flex;gap:12px;margin-top:20px;flex-wrap:wrap;">
+                <button class="primary-btn" onclick="openRequestPhotoModal('${dest.id}')">📸 Request Live Ground Photo</button>
+                <button class="secondary-btn" style="color:var(--dark);border-color:var(--border-color);" onclick="openCallForDestination('${dest.id}')">📞 Call a Local Spotter</button>
             </div>
         </div>
 
@@ -1016,26 +1067,24 @@ function openDestinationModal(destId) {
                 <h4 style="font-size:17px;">Available Verified Guides in ${dest.name}</h4>
                 <span style="font-size:13px;color:var(--text-muted);">${dest.guideCount} locals available</span>
             </div>
-            <div class="modal-guides-list">
-                ${guidesHtml}
-            </div>
+            <div class="modal-guides-list">${guidesHtml}</div>
         </div>
 
         <div id="tab-plan" class="modal-tab-content">
             <h4 style="font-size:17px;margin-bottom:12px;">Top Must-Do Highlights</h4>
             <ul style="list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px;">
-                ${highlightsList}
+                ${dest.popularHighlights.map(h => `<li style="padding:10px;background:#f8fafc;border-radius:6px;border:1px solid #e2e8f0;font-size:13.5px;">✨ ${h}</li>`).join("")}
             </ul>
 
             <div class="detail-card-small">
-                <strong>🍲 Authentic Food Specialties to try in ${dest.name}</strong>
+                <strong>🍲 Authentic Food Specialties in ${dest.name}</strong>
                 <p style="margin-top:6px;">${dest.topFood}. Ask your local guide for non-commercial heritage eateries!</p>
             </div>
         </div>
     `;
 
     destinationModal.classList.add("active");
-}
+};
 
 // Switch tabs inside modal
 window.switchModalTab = function(e, tabId) {
@@ -1048,36 +1097,8 @@ window.switchModalTab = function(e, tabId) {
     if (target) target.classList.add("active");
 };
 
-window.switchModalTabDirect = function(tabId) {
-    const parent = destinationModal.querySelector(".modal-body");
-    parent.querySelectorAll(".modal-tab-btn").forEach(btn => {
-        if (btn.getAttribute("onclick") && btn.getAttribute("onclick").includes(tabId)) {
-            btn.classList.add("active");
-        } else {
-            btn.classList.remove("active");
-        }
-    });
-    parent.querySelectorAll(".modal-tab-content").forEach(content => content.classList.remove("active"));
-    const target = parent.querySelector(`#${tabId}`);
-    if (target) target.classList.add("active");
-};
-
-// Filter main page to specific destination and scroll
-window.filterToDestination = function(destId) {
-    const dest = destinationsData.find(d => d.id === destId);
-    if (!dest) return;
-    
-    closeAllModals();
-    if (searchInput) {
-        searchInput.value = dest.name;
-        currentSearchQuery = dest.name;
-        renderDestinations();
-        document.querySelector("#explore").scrollIntoView({ behavior: "smooth" });
-    }
-};
-
-// Open Guide Profile Modal
-function openGuideProfileModal(guideId) {
+// 4. OPEN GUIDE PROFILE MODAL
+window.openGuideProfileModal = function(guideId) {
     const guide = guidesData.find(g => g.id === guideId);
     if (!guide || !guideProfileModal) return;
 
@@ -1086,114 +1107,81 @@ function openGuideProfileModal(guideId) {
 
     modalBody.innerHTML = `
         <div style="display:flex;gap:20px;align-items:center;margin-bottom:20px;flex-wrap:wrap;">
-            <img src="${guide.avatar}" alt="${guide.name}" style="width:90px;height:90px;border-radius:50%;object-fit:cover;border:4px solid var(--primary-light);">
+            <img src="${guide.avatar}" alt="${guide.name}" style="width:85px;height:85px;border-radius:50%;object-fit:cover;border:4px solid var(--primary-light);">
             <div>
                 <span class="modal-subtitle">📍 ${guide.location}</span>
-                <h2 style="font-size:28px;font-weight:900;color:var(--dark);margin:4px 0;">${guide.name} <span class="verified-badge">✓</span></h2>
-                <div style="display:flex;gap:12px;align-items:center;font-size:14px;color:var(--text-muted);">
+                <h2 style="font-size:26px;font-weight:900;color:var(--dark);margin:4px 0;">${guide.name} <span class="verified-badge">✓</span></h2>
+                <div style="display:flex;gap:12px;align-items:center;font-size:13.5px;color:var(--text-muted);">
                     <span style="color:#f59e0b;font-weight:700;">★★★★★ ${guide.rating} (${guide.reviewsCount} reviews)</span>
-                    <span>• Experience: ${guide.experience}</span>
+                    <span>• Exp: ${guide.experience}</span>
                     <span style="color:var(--secondary);font-weight:700;">🟢 Available</span>
                 </div>
             </div>
         </div>
 
-        <div style="margin-bottom:20px;">
-            <h4 style="font-size:16px;margin-bottom:8px;">About the Guide</h4>
-            <p style="color:#475569;line-height:1.6;font-size:15px;">${guide.bio}</p>
-        </div>
+        <p style="font-size:15px;color:#334155;line-height:1.6;margin-bottom:20px;">${guide.bio}</p>
 
-        <div class="detail-info-grid" style="margin-bottom:20px;">
-            <div class="detail-card-small">
-                <strong>🗣️ Languages Spoken</strong>
-                <p>${guide.languages.join(", ")}</p>
-            </div>
-            <div class="detail-card-small">
-                <strong>🎖️ Certifications & Badges</strong>
-                <p>${guide.badge} · Verified Karnataka Native</p>
-            </div>
-        </div>
+        <h4 style="font-size:16px;margin-bottom:10px;">Curated Tours & Trails</h4>
+        <ul style="list-style:none;margin-bottom:24px;">${toursList}</ul>
 
-        <div style="margin-bottom:24px;">
-            <h4 style="font-size:16px;margin-bottom:10px;">Signature Guided Tours Offered</h4>
-            <ul style="list-style:none;">${toursList}</ul>
-        </div>
-
-        <div style="display:flex;justify-content:space-between;align-items:center;padding-top:20px;border-top:1px solid #e2e8f0;">
+        <div style="display:flex;justify-content:space-between;align-items:center;padding-top:16px;border-top:1px solid #e2e8f0;">
             <div>
-                <div style="font-size:24px;font-weight:900;color:var(--dark);">₹${guide.priceDay} <span style="font-size:14px;color:var(--text-muted);font-weight:500;">/ full day</span></div>
-                <div style="font-size:13px;color:var(--text-muted);">Hourly rate: ₹${guide.priceHour}/hr</div>
+                <strong style="font-size:22px;color:var(--dark);">₹${guide.priceDay}</strong>
+                <span style="font-size:13px;color:var(--text-muted);"> / full day (₹${guide.priceHour}/hr)</span>
             </div>
-            <div style="display:flex;gap:10px;">
-                <button class="secondary-btn" style="color:var(--dark);border-color:var(--border-color);" onclick="showToast('💬 Chat message sent to ${guide.name}! They will reply within 5 mins.')">Send Message</button>
-                <button class="primary-btn" onclick="openBookGuideModal('${guide.id}')">Book Guided Trip</button>
-            </div>
+            <button class="primary-btn" onclick="openBookGuideModal('${guide.id}')">Book ${guide.name.split(' ')[0]} Now →</button>
         </div>
     `;
 
     guideProfileModal.classList.add("active");
-}
+};
 
-// Open Booking Modal
+// 5. OPEN BOOK GUIDE MODAL
 window.openBookGuideModal = function(guideId) {
-    closeAllModals();
     const guide = guidesData.find(g => g.id === guideId) || guidesData[0];
     if (!bookGuideModal) return;
 
+    closeAllModals();
     const modalBody = bookGuideModal.querySelector(".modal-body");
-    const today = new Date().toISOString().split("T")[0];
 
     modalBody.innerHTML = `
-        <h2 style="font-size:26px;font-weight:900;margin-bottom:6px;">Book Local Guide</h2>
-        <p style="color:var(--text-muted);margin-bottom:20px;">You are booking <strong>${guide.name}</strong> (📍 ${guide.location})</p>
+        <span class="modal-subtitle">RESERVE LOCAL GUIDE</span>
+        <h2 style="font-size:24px;font-weight:900;margin:4px 0 6px;">Book with ${guide.name}</h2>
+        <p style="color:var(--text-muted);font-size:14px;margin-bottom:20px;">📍 ${guide.location} · 🗣️ ${guide.languages.join(', ')}</p>
 
-        <form class="custom-form" id="bookingForm" onsubmit="handleBookingSubmit(event, '${guide.name}', ${guide.priceDay})">
+        <form class="custom-form" onsubmit="handleBookingSubmit(event, '${guide.name}', ${guide.priceDay})">
             <div class="form-row-2">
                 <div>
-                    <label class="form-label">Trip Date</label>
-                    <input class="form-control" type="date" min="${today}" value="${today}" required id="bookDate">
+                    <label class="form-label">Travel Date</label>
+                    <input class="form-control" type="date" id="bookDate" required>
                 </div>
                 <div>
                     <label class="form-label">Duration</label>
                     <select class="form-control" id="bookDuration" onchange="calculateBookingTotal(${guide.priceDay}, ${guide.priceHour})">
-                        <option value="1day">Full Day (8 hours) — ₹${guide.priceDay}</option>
-                        <option value="halfday">Half Day (4 hours) — ₹${guide.priceHour * 4}</option>
-                        <option value="2days">2-Day Immersion — ₹${guide.priceDay * 2}</option>
-                        <option value="3days">3-Day Complete Circuit — ₹${guide.priceDay * 3}</option>
+                        <option value="1day">Full Day (₹${guide.priceDay})</option>
+                        <option value="halfday">Half Day 4 hrs (₹${guide.priceHour * 4})</option>
+                        <option value="2days">2 Days (₹${guide.priceDay * 2})</option>
                     </select>
                 </div>
             </div>
 
             <div class="form-row-2">
                 <div>
-                    <label class="form-label">Number of Travelers</label>
-                    <input class="form-control" type="number" min="1" max="15" value="2" required id="bookTravelers">
+                    <label class="form-label">Your Name</label>
+                    <input class="form-control" type="text" id="bookName" placeholder="e.g. Anand Sharma" required>
                 </div>
                 <div>
-                    <label class="form-label">Preferred Tour / Focus</label>
-                    <select class="form-control" id="bookTour">
-                        ${guide.tours.map(t => `<option value="${t}">${t}</option>`).join('')}
-                    </select>
+                    <label class="form-label">WhatsApp Number</label>
+                    <input class="form-control" type="tel" id="bookPhone" placeholder="+91 98765 43210" required>
                 </div>
             </div>
 
-            <div>
-                <label class="form-label">Your Name & Phone (WhatsApp)</label>
-                <div class="form-row-2">
-                    <input class="form-control" type="text" placeholder="Full Name" required id="bookName">
-                    <input class="form-control" type="tel" placeholder="+91 Phone Number" required id="bookPhone">
-                </div>
+            <div style="background:#f8fafc;padding:14px;border-radius:var(--radius-sm);border:1px solid #e2e8f0;display:flex;justify-content:space-between;align-items:center;">
+                <span style="font-weight:700;color:var(--dark);">Estimated Total:</span>
+                <strong style="font-size:20px;color:var(--primary);" id="bookingTotalDisplay">₹${guide.priceDay}</strong>
             </div>
 
-            <div style="background:#f8fafc;padding:16px;border-radius:8px;border:1px solid #e2e8f0;display:flex;justify-content:space-between;align-items:center;">
-                <div>
-                    <span style="font-size:12px;color:var(--text-muted);display:block;">ESTIMATED TOTAL</span>
-                    <strong style="font-size:22px;color:var(--dark);" id="bookingTotalDisplay">₹${guide.priceDay}</strong>
-                </div>
-                <span style="font-size:12px;color:var(--secondary);font-weight:700;">✓ Free Cancellation up to 24h</span>
-            </div>
-
-            <button class="form-submit-btn" type="submit">Confirm & Request Guide →</button>
+            <button class="form-submit-btn" type="submit">Confirm & Connect on WhatsApp →</button>
         </form>
     `;
 
@@ -1209,20 +1197,17 @@ window.calculateBookingTotal = function(dayPrice, hourPrice) {
     if (duration === "1day") totalDisplay.textContent = `₹${dayPrice}`;
     else if (duration === "halfday") totalDisplay.textContent = `₹${hourPrice * 4}`;
     else if (duration === "2days") totalDisplay.textContent = `₹${dayPrice * 2}`;
-    else if (duration === "3days") totalDisplay.textContent = `₹${dayPrice * 3}`;
 };
 
 // Handle Booking Submission
 window.handleBookingSubmit = function(e, guideName, price) {
     e.preventDefault();
     const date = document.querySelector("#bookDate").value;
-    const name = document.querySelector("#bookName").value;
-    
     closeAllModals();
-    showToast(`🎉 Booking Request Sent! ${guideName} has received your request for ${date}. They will connect on WhatsApp.`);
+    showToast(`🎉 Booking Request Sent! ${guideName} has received your request for ${date}. They will connect directly on WhatsApp.`);
 };
 
-// Open "Become a Guide" Modal
+// 6. BECOME A GUIDE / SPOTTER MODAL
 window.openBecomeGuideModal = function() {
     closeAllModals();
     if (!becomeGuideModal) return;
@@ -1232,14 +1217,14 @@ window.openBecomeGuideModal = function() {
 
     modalBody.innerHTML = `
         <span class="modal-subtitle">JOIN OUR COMMUNITY</span>
-        <h2 style="font-size:28px;font-weight:900;margin:6px 0 8px;">Become a Verified Guido Local</h2>
-        <p style="color:var(--text-muted);margin-bottom:20px;font-size:15px;">Earn by showing travelers the real authentic Karnataka you know and love.</p>
+        <h2 style="font-size:26px;font-weight:900;margin:6px 0 8px;">Become a Verified Guido Spotter or Guide</h2>
+        <p style="color:var(--text-muted);margin-bottom:20px;font-size:14.5px;">Earn by uploading real-time ground photos, answering local calls, or leading tours in Karnataka.</p>
 
         <form class="custom-form" onsubmit="handleBecomeGuideSubmit(event)">
             <div class="form-row-2">
                 <div>
                     <label class="form-label">Full Name</label>
-                    <input class="form-control" type="text" placeholder="e.g. Ramesh K" required>
+                    <input class="form-control" type="text" placeholder="e.g. Ramesh Gowda" required>
                 </div>
                 <div>
                     <label class="form-label">Your Home District</label>
@@ -1251,18 +1236,18 @@ window.openBecomeGuideModal = function() {
 
             <div class="form-row-2">
                 <div>
-                    <label class="form-label">Languages You Speak</label>
+                    <label class="form-label">Languages Spoken</label>
                     <input class="form-control" type="text" placeholder="e.g. Kannada, English, Tulu" required>
                 </div>
                 <div>
-                    <label class="form-label">Years of Local Knowledge</label>
-                    <input class="form-control" type="number" min="1" max="50" value="5" required>
+                    <label class="form-label">Role You Wish to Join</label>
+                    <select class="form-control">
+                        <option>📸 Live Photo Spotter (Upload ground photos)</option>
+                        <option>📞 Local Call Advisor</option>
+                        <option>🧭 Full Guided Tour Leader</option>
+                        <option>🌟 All of the above</option>
+                    </select>
                 </div>
-            </div>
-
-            <div>
-                <label class="form-label">Your Local Specialty & Expertise</label>
-                <input class="form-control" type="text" placeholder="e.g. Heritage Temples, Coffee Estates, Scuba & Surfing, Hidden Trekking Trails" required>
             </div>
 
             <div>
@@ -1273,7 +1258,7 @@ window.openBecomeGuideModal = function() {
                 </div>
             </div>
 
-            <button class="form-submit-btn" type="submit">Submit Application for Verification →</button>
+            <button class="form-submit-btn" type="submit">Submit Verification Application →</button>
         </form>
     `;
 
@@ -1284,7 +1269,7 @@ window.openBecomeGuideModal = function() {
 window.handleBecomeGuideSubmit = function(e) {
     e.preventDefault();
     closeAllModals();
-    showToast("✅ Application Submitted! Our Karnataka verification team will reach out in 24 hours.");
+    showToast("✅ Application Submitted! Our Karnataka local onboarding team will connect within 24 hours.");
 };
 
 // Close all active modals
@@ -1292,7 +1277,10 @@ function closeAllModals() {
     document.querySelectorAll(".modal-backdrop").forEach(m => m.classList.remove("active"));
 }
 
-// Wishlist Functionality
+// =========================================================
+// WISHLIST, TOAST & TRIP PLANNER
+// =========================================================
+
 window.toggleWishlist = function(destId) {
     const index = wishlist.indexOf(destId);
     const dest = destinationsData.find(d => d.id === destId);
@@ -1311,9 +1299,7 @@ window.toggleWishlist = function(destId) {
 };
 
 function updateWishlistUI() {
-    wishlistCountEls.forEach(el => {
-        el.textContent = wishlist.length;
-    });
+    wishlistCountEls.forEach(el => el.textContent = wishlist.length);
 
     if (wishlistItemsList) {
         if (wishlist.length === 0) {
@@ -1321,7 +1307,7 @@ function updateWishlistUI() {
             return;
         }
 
-        const items = wishlist.map(id => {
+        wishlistItemsList.innerHTML = wishlist.map(id => {
             const dest = destinationsData.find(d => d.id === id);
             if (!dest) return "";
             return `
@@ -1329,25 +1315,19 @@ function updateWishlistUI() {
                     <img src="${dest.img}" alt="${dest.name}">
                     <div class="wishlist-item-info">
                         <h4>${dest.name}</h4>
-                        <span>📍 ${dest.district} · ${dest.guideCount} Guides</span>
+                        <span>📍 ${dest.district} · ${dest.spotterCount} Spotters</span>
                     </div>
                     <button class="btn-remove-fav" onclick="toggleWishlist('${dest.id}')" title="Remove">✕</button>
                 </div>
             `;
         }).join("");
-
-        wishlistItemsList.innerHTML = items;
     }
 }
 
-// Wishlist Drawer Toggle
 window.toggleWishlistDrawer = function() {
-    if (wishlistDrawer) {
-        wishlistDrawer.classList.toggle("open");
-    }
+    if (wishlistDrawer) wishlistDrawer.classList.toggle("open");
 };
 
-// Toast Notifications
 function showToast(message) {
     if (!toastContainer) return;
     const toast = document.createElement("div");
@@ -1362,21 +1342,16 @@ function showToast(message) {
     }, 4000);
 }
 
-// Trip Planner Interactive Engine
+// Custom Trip Plan Generator
 window.generateCustomPlan = function(e) {
     e.preventDefault();
-    const region = document.querySelector("#planRegion").value;
     const interest = document.querySelector("#planInterest").value;
     const duration = document.querySelector("#planDuration").value;
     const outputCard = document.querySelector("#plannerOutput");
 
     if (!outputCard) return;
 
-    let matchedPlaces = destinationsData.filter(d => {
-        if (interest !== "all" && !d.categories.includes(interest)) return false;
-        return true;
-    });
-
+    let matchedPlaces = destinationsData.filter(d => interest === "all" || d.categories.includes(interest));
     if (matchedPlaces.length < 3) matchedPlaces = destinationsData.slice(0, 4);
 
     let daysHtml = "";
@@ -1389,7 +1364,10 @@ window.generateCustomPlan = function(e) {
                 <h4>Day ${i}: ${place.name} (${place.district})</h4>
                 <p><strong>Highlights:</strong> ${place.popularHighlights.slice(0, 2).join(", ")}</p>
                 <p style="margin-top:6px;font-size:12.5px;color:#94a3b8;"><strong>Local Taste:</strong> ${place.topFood.split(',')[0]}</p>
-                <button class="primary-btn" style="padding:5px 10px;font-size:12px;margin-top:10px;" onclick="openDestinationModal('${place.id}')">Explore & Guides →</button>
+                <div style="margin-top:10px;display:flex;gap:6px;">
+                    <button class="primary-btn" style="padding:4px 8px;font-size:11px;" onclick="openRequestPhotoModal('${place.id}')">Live Photo 📸</button>
+                    <button class="secondary-btn" style="padding:4px 8px;font-size:11px;color:#fff;border-color:rgba(255,255,255,0.3);" onclick="openDestinationModal('${place.id}')">Guides 🧭</button>
+                </div>
             </div>
         `;
     }
@@ -1400,7 +1378,7 @@ window.generateCustomPlan = function(e) {
                 <span class="eyebrow" style="background:rgba(255,255,255,0.15);color:#fff;border:none;">CURATED ITINERARY</span>
                 <h3 style="font-size:24px;font-weight:900;color:#fff;margin-top:4px;">Your ${daysCount}-Day ${interest.toUpperCase()} Journey in Karnataka</h3>
             </div>
-            <button class="secondary-btn" style="padding:8px 14px;font-size:13px;" onclick="showToast('📋 Itinerary saved! You can book local guides for each destination.')">Save Itinerary</button>
+            <button class="secondary-btn" style="padding:8px 14px;font-size:13px;" onclick="showToast('📋 Itinerary saved! You can request live photos or book local spotters for each day.')">Save Itinerary</button>
         </div>
         <div class="itinerary-days-grid">${daysHtml}</div>
     `;
@@ -1409,65 +1387,32 @@ window.generateCustomPlan = function(e) {
     outputCard.scrollIntoView({ behavior: "smooth" });
 };
 
-// ==========================================
-// EVENT LISTENERS ATTACHMENT
-// ==========================================
+window.filterToDestination = function(destId) {
+    const dest = destinationsData.find(d => d.id === destId);
+    if (!dest) return;
+    
+    closeAllModals();
+    if (searchInput) {
+        searchInput.value = dest.name;
+        currentSearchQuery = dest.name;
+        renderDestinations();
+        document.querySelector("#explore").scrollIntoView({ behavior: "smooth" });
+    }
+};
+
+// =========================================================
+// EVENT LISTENERS INITIALIZATION
+// =========================================================
 
 function attachDestinationCardListeners() {
-    // "Explore →" buttons
-    document.querySelectorAll(".btn-explore").forEach(btn => {
-        btn.addEventListener("click", (e) => {
-            e.stopPropagation();
-            const id = btn.dataset.id;
-            openDestinationModal(id);
-        });
-    });
-
-    // Guide count badges click
-    document.querySelectorAll(".guide-count-badge").forEach(badge => {
-        badge.addEventListener("click", (e) => {
-            e.stopPropagation();
-            const destId = badge.dataset.dest;
-            openDestinationModal(destId);
-        });
-    });
-
-    // Wishlist buttons click
     document.querySelectorAll(".btn-fav").forEach(btn => {
         btn.addEventListener("click", (e) => {
             e.stopPropagation();
-            const id = btn.dataset.id;
-            toggleWishlist(id);
-        });
-    });
-
-    // Card click opens modal
-    document.querySelectorAll(".destination-card").forEach(card => {
-        card.addEventListener("click", (e) => {
-            if (e.target.closest("button") || e.target.closest(".guide-count-badge")) return;
-            const id = card.dataset.id;
-            openDestinationModal(id);
+            toggleWishlist(btn.dataset.id);
         });
     });
 }
 
-function attachGuideCardListeners() {
-    document.querySelectorAll(".guide-view-btn").forEach(btn => {
-        btn.addEventListener("click", () => {
-            const id = btn.dataset.guideId;
-            openGuideProfileModal(id);
-        });
-    });
-
-    document.querySelectorAll(".guide-book-quick-btn").forEach(btn => {
-        btn.addEventListener("click", () => {
-            const id = btn.dataset.guideId;
-            openBookGuideModal(id);
-        });
-    });
-}
-
-// Search & Filter Events
 function initSearchAndFilters() {
     if (searchButton) {
         searchButton.addEventListener("click", () => {
@@ -1488,13 +1433,6 @@ function initSearchAndFilters() {
     }
 
     if (searchInput) {
-        searchInput.addEventListener("keydown", (e) => {
-            if (e.key === "Enter") {
-                currentSearchQuery = searchInput.value;
-                renderDestinations();
-            }
-        });
-
         searchInput.addEventListener("input", () => {
             currentSearchQuery = searchInput.value;
             renderDestinations();
@@ -1508,7 +1446,6 @@ function initSearchAndFilters() {
         });
     }
 
-    // Category button clicks
     categoryButtons.forEach(btn => {
         btn.addEventListener("click", () => {
             selectedCategory = btn.dataset.category;
@@ -1517,7 +1454,6 @@ function initSearchAndFilters() {
         });
     });
 
-    // Guide filter tag buttons
     guideFilterButtons.forEach(btn => {
         btn.addEventListener("click", () => {
             selectedGuideSpecialty = btn.dataset.specialty || "all";
@@ -1526,7 +1462,6 @@ function initSearchAndFilters() {
         });
     });
 
-    // Close modals on clicking backdrop or close button
     document.querySelectorAll(".modal-close-btn").forEach(btn => {
         btn.addEventListener("click", closeAllModals);
     });
@@ -1537,7 +1472,6 @@ function initSearchAndFilters() {
         });
     });
 
-    // ESC key closes modals
     document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") {
             closeAllModals();
@@ -1545,7 +1479,6 @@ function initSearchAndFilters() {
         }
     });
 
-    // Nav "Become a Guide" buttons
     document.querySelectorAll(".btn-become-guide").forEach(btn => {
         btn.addEventListener("click", openBecomeGuideModal);
     });
@@ -1554,9 +1487,10 @@ function initSearchAndFilters() {
 // Initial Boot
 document.addEventListener("DOMContentLoaded", () => {
     updateCategoryCounts();
+    renderLivePhotos();
+    renderCallSpotters();
     renderDestinations();
     renderGuides();
-    renderLiveUpdates();
     updateWishlistUI();
     initSearchAndFilters();
 });

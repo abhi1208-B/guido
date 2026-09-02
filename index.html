@@ -3,102 +3,223 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guido — See Karnataka Through Local Eyes | Verified Local Guides & Travel Intelligence</title>
-    <meta name="description" content="Discover 22+ Karnataka destinations and connect directly with verified local guides in Hampi, Coorg, Gokarna, Mysore, Murudeshwar, Kabini, Agumbe, and more.">
+    <title>Guido — Karnataka Travel Intelligence | Request Live Photos, Instant Local Calls & Guides</title>
+    <meta name="description" content="Request real-time live ground photos, call verified on-ground locals, and book authentic local guides across 22+ Karnataka destinations including Hampi, Coorg, Gokarna, Jog Falls, and Kabini.">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+    <!-- Real-Time Travel Radar Ticker -->
+    <div class="top-live-bar">
+        <div class="top-live-ticker-track">
+            <span class="ticker-pill"><span class="pulse-dot"></span> <strong>LIVE RADAR:</strong> Jog Falls water volume high today after Western Ghats rains</span>
+            <span class="ticker-pill">📸 <strong>HAMPI:</strong> Virupaksha temple queue under 10 mins (verified 15m ago)</span>
+            <span class="ticker-pill">🌸 <strong>COORG:</strong> Madikeri coffee blossom showers active</span>
+            <span class="ticker-pill">🌊 <strong>GOKARNA:</strong> Calm sea at Om Beach & Kudle</span>
+            <span class="ticker-pill">🐅 <strong>KABINI:</strong> Zone B tiger sighting reported at 6:45 AM</span>
+            <span class="ticker-pill"><span class="pulse-dot"></span> <strong>LIVE RADAR:</strong> Agumbe sunset point clear visibility this evening</span>
+        </div>
+    </div>
+
     <!-- Navigation Header -->
     <header>
         <nav>
             <a href="index.html" class="logo-container">
-                <span class="logo">Guido<span>.</span></span>
-                <span class="logo-tag">Karnataka</span>
+                <div class="logo-icon-wrap">🧭</div>
+                <div class="logo">Guido<span>.</span></div>
+                <span class="logo-tag">Karnataka Live</span>
             </a>
 
             <div class="nav-links">
-                <a href="#explore" class="active">Explore Places</a>
+                <a href="#live-photos" class="highlight-nav">📸 Request Live Photo</a>
+                <a href="#call-hub" class="highlight-nav">📞 Call a Local</a>
+                <a href="#explore">Explore 22+ Places</a>
                 <a href="#guides">Local Guides</a>
                 <a href="#planner">Trip Planner</a>
-                <a href="#live">Live Intelligence</a>
-                <a href="#how">How It Works</a>
             </div>
 
             <div class="nav-actions">
-                <button class="btn-wishlist" onclick="toggleWishlistDrawer()" type="button" aria-label="Open Wishlist">
+                <button class="btn-wishlist" onclick="toggleWishlistDrawer()" type="button" aria-label="Open Saved Places">
                     <span>❤️</span>
                     <span class="count wishlist-count">0</span>
                 </button>
-                <button class="nav-button btn-become-guide" type="button">Become a Guide</button>
+                <button class="btn-nav-action btn-become-guide" type="button">+ Join as Spotter/Guide</button>
             </div>
         </nav>
     </header>
 
     <main>
-        <!-- Hero Section -->
+        <!-- Hero Section with Animated Travel Diorama -->
         <section class="hero">
+            <!-- Drifting Clouds Animation -->
+            <div class="cloud-system">
+                <div class="cloud cloud-1"></div>
+                <div class="cloud cloud-2"></div>
+                <div class="cloud cloud-3"></div>
+            </div>
+
             <div class="hero-wrapper">
                 <div class="hero-content">
-                    <span class="eyebrow">LOCAL TRAVEL INTELLIGENCE · KARNATAKA</span>
-                    <h1>See Karnataka <span>Through Local Eyes.</span></h1>
+                    <span class="eyebrow-hero">⚡ ON-DEMAND TRAVEL INTELLIGENCE · KARNATAKA</span>
+                    <h1>Know Before You Go. <span class="gradient-text">Request Live Photos & Call Verified Locals.</span></h1>
                     <p>
-                        Skip the generic tourist traps. Connect with verified local residents, historians, coffee planters, and trek leaders for authentic real-time travel intelligence and unforgettable journeys.
+                        Don't rely on outdated blogs or fake reviews. Get instant live ground photos, make 1-click enquiry calls to local residents, and book trusted guides across Karnataka.
                     </p>
 
-                    <div class="hero-buttons">
-                        <a href="#explore" class="primary-btn">Explore 22+ Destinations →</a>
-                        <a href="#guides" class="secondary-btn">Find a Local Guide</a>
+                    <!-- Hero 3-Tier Core Action Palette -->
+                    <div class="hero-action-palette">
+                        <div class="action-palette-title">
+                            <span>🚀 WHAT DO YOU NEED RIGHT NOW?</span>
+                            <small style="color:#86efac;font-size:11px;">🟢 140+ Spotters Online</small>
+                        </div>
+                        <div class="hero-action-buttons">
+                            <a href="javascript:void(0)" onclick="openRequestPhotoModal('hampi')" class="action-btn-pill btn-tier-photo">
+                                <span class="btn-label">📸 Request Live Photo</span>
+                                <span class="btn-desc">Instant ground proof in 5 mins</span>
+                            </a>
+                            <a href="javascript:void(0)" onclick="openCallModal('c1')" class="action-btn-pill btn-tier-call">
+                                <span class="btn-label">📞 Call / Ask a Local</span>
+                                <span class="btn-desc">1-on-1 audio enquiry & WhatsApp</span>
+                            </a>
+                            <a href="#guides" class="action-btn-pill btn-tier-guide">
+                                <span class="btn-label">🧭 Book a Guide</span>
+                                <span class="btn-desc">Curated day & trek tours</span>
+                            </a>
+                        </div>
                     </div>
 
-                    <div class="hero-stats">
-                        <div class="stat-item">
+                    <div class="hero-stats-row">
+                        <div class="hero-stat">
                             <strong id="totalDestCount">22+</strong>
-                            <span>Destinations</span>
+                            <span>Karnataka Places</span>
                         </div>
-                        <div class="stat-item">
-                            <strong id="totalGuidesCount">150+</strong>
-                            <span>Verified Locals</span>
+                        <div class="hero-stat">
+                            <strong id="totalSpottersCount">320+</strong>
+                            <span>Active Spotters</span>
                         </div>
-                        <div class="stat-item">
-                            <strong>4.9 ★</strong>
-                            <span>Traveler Rating</span>
+                        <div class="hero-stat">
+                            <strong id="avgPhotoSpeed">< 6 min</strong>
+                            <span>Avg Live Photo Speed</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Hero Interactive Cards -->
-                <div class="hero-card-stack">
-                    <div class="featured-guide-badge">
-                        <div class="guide-avatar-initials">RK</div>
-                        <div class="guide-details">
-                            <strong>Ravi Kumar <span class="verified-badge">✓</span></strong>
-                            <span>📍 Hampi, Vijayanagara · 9 yrs exp</span>
-                            <div class="guide-badge-row">
-                                <span class="rating-tag">★★★★★ 4.9 (142 reviews)</span>
-                                <span class="avail-tag"><span class="avail-dot"></span> Available now</span>
+                <!-- Hero Right Interactive Live Radar Showcase -->
+                <div class="hero-live-showcase">
+                    <div class="radar-live-card">
+                        <div class="radar-top-row">
+                            <span class="radar-badge"><span class="pulse-dot"></span> LIVE GROUND SNAPSHOT</span>
+                            <span style="font-size:12px;color:#cbd5e1;">📍 Abbey Falls, Coorg</span>
+                        </div>
+                        <div class="radar-photo-preview">
+                            <img src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=700&q=80" alt="Live Abbey Falls">
+                            <span class="photo-timestamp-tag">⏱️ Taken 12m ago</span>
+                            <span class="photo-verification-tag">✓ Verified Spotter</span>
+                        </div>
+                        <div class="radar-footer-row">
+                            <div>
+                                <strong style="display:block;font-size:13.5px;color:#fff;">Surging water flow & clear sky</strong>
+                                <small style="color:#94a3b8;">Uploaded by Ganesh (Coorg Local)</small>
                             </div>
+                            <button onclick="openRequestPhotoModal('coorg')" type="button">Request New Photo</button>
                         </div>
                     </div>
+                </div>
+            </div>
 
-                    <div class="live-ticker-card">
-                        <div class="ticker-icon">🌸</div>
-                        <div class="ticker-text">
-                            <small>Live from Coorg · 40m ago</small>
-                            <p>Coffee blossom showers started in Madikeri! Estates fragrant with white blooms.</p>
+            <!-- Animated Travel Diorama (Moving Train, Bus, Road, Railway, Greenery) -->
+            <div class="travel-diorama-container" aria-hidden="true">
+                <div class="scenic-hills"></div>
+                
+                <div class="scenic-greenery">
+                    <span class="swaying-tree">🌴</span>
+                    <span class="swaying-tree">🌲</span>
+                    <span class="swaying-tree">🌿</span>
+                    <span class="swaying-tree">🌴</span>
+                    <span class="swaying-tree">🌲</span>
+                    <span class="swaying-tree">🌴</span>
+                    <span class="swaying-tree">🌿</span>
+                    <span class="swaying-tree">🌲</span>
+                </div>
+
+                <!-- Moving Western Ghats Train on Tracks -->
+                <div class="railway-track-lane">
+                    <div class="moving-train">
+                        <div class="train-locomotive">
+                            <div class="train-smoke-puff"></div>
+                            <span>GHATS EXP</span>
                         </div>
+                        <div class="train-coach">KARNATAKA</div>
+                        <div class="train-coach">TOURIST</div>
+                        <div class="train-coach">EXPRESS</div>
+                    </div>
+                </div>
+
+                <!-- Moving Karnataka Explorer Road Bus -->
+                <div class="highway-road-lane">
+                    <div class="road-stripe"></div>
+                    <div class="moving-bus">
+                        <div class="bus-body">
+                            <span>🚌</span>
+                            <span>GUIDO TRAVEL BUS</span>
+                        </div>
+                        <div class="bus-headlight"></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Explore Destinations Section -->
+        <!-- SECTION 1: LIVE GROUND PHOTO RADAR & COMMUNITY STREAM -->
+        <section class="live-photo-section" id="live-photos">
+            <div class="live-photo-container">
+                <div class="section-title-wrap">
+                    <div>
+                        <span class="eyebrow" style="background:rgba(234,88,12,0.12);color:#ea580c;border-color:rgba(234,88,12,0.3);">📸 REAL-TIME VISUAL VERIFICATION</span>
+                        <h2>Live Ground Photo Radar</h2>
+                        <p>Real-time, on-the-ground visual updates submitted by verified local residents and travelers within the last 60 minutes. Request a custom photo of any spot!</p>
+                    </div>
+                    <button class="primary-btn" onclick="openRequestPhotoModal('all')" style="padding:12px 22px;font-size:14px;">
+                        <span>📷</span> Request Live Photo of Any Spot →
+                    </button>
+                </div>
+
+                <!-- Live Photo Cards Grid -->
+                <div class="live-photo-grid" id="livePhotosGrid">
+                    <!-- Injected dynamically via app.js -->
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: INSTANT LOCAL ENQUIRY & 1-CLICK CALL HUB -->
+        <section class="call-hub-section" id="call-hub">
+            <div class="call-hub-container">
+                <div class="call-hub-banner">
+                    <div class="call-banner-content">
+                        <span class="eyebrow" style="background:rgba(255,255,255,0.2);color:#fff;border-color:rgba(255,255,255,0.4);">📞 DIRECT LOCAL ENQUIRY</span>
+                        <h3>Need Instant Travel Advice? Call a Verified Karnataka Local.</h3>
+                        <p>Ask about current road conditions, Ghat section visibility, crowd queues, monsoon surge, or authentic food spots directly over phone call or WhatsApp.</p>
+                        <div class="call-feature-badges">
+                            <span class="call-feat-pill">⚡ Instant Response</span>
+                            <span class="call-feat-pill">🗣️ Kannada, English, Hindi & Tulu</span>
+                            <span class="call-feat-pill">🛡️ Zero Agency Intermediaries</span>
+                        </div>
+                    </div>
+
+                    <!-- Quick Local Spotters Dial Grid -->
+                    <div class="call-spotters-card-grid" id="callSpottersGrid">
+                        <!-- Injected dynamically via app.js -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: EXPLORE 22+ DESTINATIONS -->
         <section class="explore" id="explore">
             <div class="section-heading">
                 <div>
                     <span class="eyebrow">DISCOVER KARNATAKA</span>
                     <h2>Explore 22+ Iconic Destinations</h2>
-                    <p>Discover heritage ruins, mist-clad peaks, untouched coastlines, and rainforest sanctuaries.</p>
+                    <p>Request live photos, call local spotters, or book guided experiences across Karnataka.</p>
                 </div>
             </div>
 
@@ -108,11 +229,11 @@
                     <div class="input-wrapper">
                         <span>🔍</span>
                         <input id="placeSearch" type="search"
-                               placeholder="Search destinations (e.g. Hampi, Gokarna, Scuba, Coffee, Waterfall)..."
+                               placeholder="Search destinations (e.g. Hampi, Gokarna, Jog Falls, Coorg, Scuba, Waterfall)..."
                                aria-label="Search destinations">
                     </div>
                     <select class="sort-select" id="sortSelect" aria-label="Sort destinations">
-                        <option value="popular">Most Popular</option>
+                        <option value="popular">Most Active Spotters</option>
                         <option value="rating">Highest Rated</option>
                         <option value="name">Name (A – Z)</option>
                     </select>
@@ -151,13 +272,13 @@
 
             <div class="results-status">
                 <span id="searchResultsCount">Showing 22 of 22 Karnataka destinations</span>
-                <span>💡 Click <strong>Explore →</strong> on any place to see local guides & secret insights</span>
+                <span>💡 Use <strong>📸 Live Photo</strong> or <strong>📞 Call</strong> on any card for instant updates</span>
             </div>
 
             <!-- No Results Message -->
             <div id="noResults" class="no-results">
                 <h3>No destinations matched your search</h3>
-                <p>Try searching for a different place like "Coorg", "Murudeshwar", "Kabini", or click Reset.</p>
+                <p>Try searching for a different place like "Jog Falls", "Coorg", "Murudeshwar", or click Reset.</p>
                 <button class="primary-btn" style="margin-top:15px;" onclick="document.querySelector('#clearButton').click()">Reset Filters</button>
             </div>
 
@@ -167,14 +288,14 @@
             </div>
         </section>
 
-        <!-- Verified Local Guides Directory Section -->
+        <!-- SECTION 4: LOCAL GUIDES DIRECTORY -->
         <section class="guides-section" id="guides">
             <div class="guides-wrapper">
                 <div class="section-heading">
                     <div>
                         <span class="eyebrow">VERIFIED LOCAL COMMUNITY</span>
-                        <h2>Meet Your Karnataka Guides</h2>
-                        <p>Travel with certified historians, coffee planters, surf coaches, and rainforest naturalists.</p>
+                        <h2>Meet Verified Karnataka Local Guides</h2>
+                        <p>Travel with certified historians, coffee planters, surf coaches, and Western Ghats trek leaders.</p>
                     </div>
                 </div>
 
@@ -198,13 +319,13 @@
             </div>
         </section>
 
-        <!-- Interactive Trip Planner Section -->
+        <!-- SECTION 5: TRIP PLANNER -->
         <section class="trip-planner-section" id="planner">
             <div class="planner-container">
                 <div class="planner-header">
                     <span class="eyebrow" style="background:rgba(242,140,40,0.2);color:#f28c28;border-color:rgba(242,140,40,0.4);">SMART ITINERARY BUILDER</span>
                     <h2>Plan Your Karnataka Journey with Locals</h2>
-                    <p>Select your travel preferences to get a personalized day-by-day route with recommended local guides and authentic food stops.</p>
+                    <p>Select your travel style to get a personalized day-by-day route with recommended live spotters, local guides, and authentic food stops.</p>
                 </div>
 
                 <form class="planner-form-grid" onsubmit="generateCustomPlan(event)">
@@ -251,47 +372,29 @@
             </div>
         </section>
 
-        <!-- Live Local Updates Intelligence Feed -->
-        <section class="live-section" id="live">
-            <div class="live-wrapper">
-                <div class="live-header-row">
-                    <div>
-                        <span class="eyebrow">LIVE TRAVEL RADAR</span>
-                        <h2>Real-Time Karnataka Local Updates</h2>
-                        <p>Live trail conditions, waterfall surges, flower blooms, wildlife sightings, and crowd status reported by verified locals on the ground.</p>
-                    </div>
-                    <button class="secondary-btn" style="color:var(--dark);border-color:var(--border-color);background:#fff;" onclick="showToast('ℹ️ Real-time local feed refreshes automatically every 5 minutes.')">🔄 Refresh Status</button>
-                </div>
-
-                <div class="live-feed-grid" id="liveFeedGrid">
-                    <!-- Injected dynamically via app.js -->
-                </div>
-            </div>
-        </section>
-
-        <!-- How Guido Works -->
+        <!-- SECTION 6: HOW GUIDO WORKS -->
         <section class="info-section" id="how">
             <div style="text-align:center;max-width:700px;margin:0 auto 30px;">
-                <span class="eyebrow">TRANSPARENT & AUTHENTIC</span>
-                <h2>How Guido Works</h2>
-                <p>Direct connection to verified residents without agency markups or robotic tours.</p>
+                <span class="eyebrow">TRANSPARENT & REAL-TIME</span>
+                <h2>How Guido Travel Intelligence Works</h2>
+                <p>3 simple steps to eliminate travel uncertainties across Karnataka.</p>
             </div>
 
             <div class="info-grid">
                 <div class="info-card">
                     <span class="step-num">01</span>
-                    <h3>Select Any Destination</h3>
-                    <p>Search through 22+ handpicked Karnataka locations with secret spots, season advisories, and local cuisine recommendations.</p>
+                    <h3>Request a Live Ground Photo</h3>
+                    <p>Want to know if Jog Falls is roaring or if Om Beach is crowded? Submit a 1-click request and an active spotter uploads a photo in minutes.</p>
                 </div>
                 <div class="info-card">
                     <span class="step-num">02</span>
-                    <h3>Connect with Verified Locals</h3>
-                    <p>Review guide profiles, languages spoken, traveler ratings, hourly/daily pricing, and specialty itineraries tailored to your style.</p>
+                    <h3>Call a Verified Local</h3>
+                    <p>Connect 1-on-1 via direct audio call or WhatsApp enquiry with tea estate owners, trek leads, and certified spotters for real-time guidance.</p>
                 </div>
                 <div class="info-card">
                     <span class="step-num">03</span>
-                    <h3>Travel with Confidence</h3>
-                    <p>Get real-time WhatsApp coordination, insider access to non-touristy gems, and direct support throughout your Karnataka trip.</p>
+                    <h3>Book a Local Guide</h3>
+                    <p>When you arrive, explore with authentic local historians, nature naturalists, and certified drivers for unforgettable memories.</p>
                 </div>
             </div>
         </section>
@@ -303,7 +406,7 @@
             <div class="footer-top">
                 <div class="footer-brand">
                     <div class="logo">Guido<span>.</span></div>
-                    <p>Empowering travelers with authentic local travel intelligence across 31 districts of Karnataka.</p>
+                    <p>Karnataka's On-Demand Travel Intelligence & Live Verification Platform across 31 districts.</p>
                 </div>
 
                 <div class="footer-col">
@@ -312,26 +415,26 @@
                         <li><a href="#explore" onclick="filterToDestination('hampi')">Hampi Heritage</a></li>
                         <li><a href="#explore" onclick="filterToDestination('coorg')">Coorg Coffee Hills</a></li>
                         <li><a href="#explore" onclick="filterToDestination('gokarna')">Gokarna Beaches</a></li>
+                        <li><a href="#explore" onclick="filterToDestination('jogfalls')">Jog Falls Surges</a></li>
                         <li><a href="#explore" onclick="filterToDestination('kabini')">Kabini Wildlife</a></li>
-                        <li><a href="#explore" onclick="filterToDestination('murudeshwar')">Murudeshwar Scuba</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h4>Platform Features</h4>
+                    <h4>Core Services</h4>
                     <ul>
-                        <li><a href="#explore">Explore Destinations</a></li>
+                        <li><a href="#live-photos">Request Live Ground Photos</a></li>
+                        <li><a href="#call-hub">Call a Verified Local</a></li>
                         <li><a href="#guides">Verified Guides Directory</a></li>
                         <li><a href="#planner">Smart Itinerary Planner</a></li>
-                        <li><a href="#live">Live Local Radar</a></li>
-                        <li><a href="javascript:void(0)" class="btn-become-guide">Become a Local Guide</a></li>
+                        <li><a href="javascript:void(0)" class="btn-become-guide">Become a Local Spotter</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
                     <h4>Community & Trust</h4>
                     <ul>
-                        <li><a href="javascript:void(0)">Guide Verification Standards</a></li>
+                        <li><a href="javascript:void(0)">Live Photo Verification Standards</a></li>
                         <li><a href="javascript:void(0)">Karnataka Forest Dept Rules</a></li>
                         <li><a href="javascript:void(0)">Sustainable Tourism Policy</a></li>
                         <li><a href="javascript:void(0)">Safety & Support</a></li>
@@ -357,7 +460,27 @@
         </div>
     </div>
 
-    <!-- Destination Insight & Explore Guides Modal -->
+    <!-- 1. LIVE PHOTO REQUEST MODAL -->
+    <div class="modal-backdrop" id="requestPhotoModal">
+        <div class="modal-card" style="max-width:620px;">
+            <button class="modal-close-btn" type="button" aria-label="Close modal">✕</button>
+            <div class="modal-body">
+                <!-- Dynamically filled by app.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. INSTANT LOCAL CALL & ENQUIRY MODAL -->
+    <div class="modal-backdrop" id="callLocalModal">
+        <div class="modal-card" style="max-width:580px;">
+            <button class="modal-close-btn" type="button" aria-label="Close modal">✕</button>
+            <div class="modal-body">
+                <!-- Dynamically filled by app.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. DESTINATION INSIGHT & GUIDES MODAL -->
     <div class="modal-backdrop" id="destinationModal">
         <div class="modal-card">
             <button class="modal-close-btn" type="button" aria-label="Close modal">✕</button>
@@ -367,7 +490,7 @@
         </div>
     </div>
 
-    <!-- Guide Profile Modal -->
+    <!-- 4. GUIDE PROFILE MODAL -->
     <div class="modal-backdrop" id="guideProfileModal">
         <div class="modal-card">
             <button class="modal-close-btn" type="button" aria-label="Close modal">✕</button>
@@ -377,7 +500,7 @@
         </div>
     </div>
 
-    <!-- Book Guide Modal -->
+    <!-- 5. BOOK GUIDE MODAL -->
     <div class="modal-backdrop" id="bookGuideModal">
         <div class="modal-card" style="max-width:560px;">
             <button class="modal-close-btn" type="button" aria-label="Close modal">✕</button>
@@ -387,7 +510,7 @@
         </div>
     </div>
 
-    <!-- Become a Guide Modal -->
+    <!-- 6. BECOME A GUIDE / SPOTTER MODAL -->
     <div class="modal-backdrop" id="becomeGuideModal">
         <div class="modal-card" style="max-width:600px;">
             <button class="modal-close-btn" type="button" aria-label="Close modal">✕</button>
