@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guido Admin — Guide Applications Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body class="admin-body">
+
+    <!-- Admin Header -->
+    <header class="admin-header">
+        <div class="admin-nav-container">
+            <div class="admin-brand">
+                <a href="/" class="logo">Guido</a>
+                <span class="admin-badge">Admin Portal</span>
+            </div>
+
+            <div class="admin-actions">
+                <a href="/" class="btn-secondary-link" target="_blank">
+                    🌐 View Public Site ↗
+                </a>
+                <button id="refreshBtn" class="admin-refresh-btn" title="Refresh Applications">
+                    🔄 Refresh
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Dashboard Container -->
+    <main class="admin-main">
+        <div class="admin-title-row">
+            <div>
+                <span class="eyebrow">MANAGEMENT & ONBOARDING</span>
+                <h1>Guide Applications</h1>
+                <p class="subtitle">Review, approve, and manage local guide submissions across Karnataka.</p>
+            </div>
+            <div class="quick-export">
+                <button id="exportCsvBtn" class="btn-outline">📥 Export CSV</button>
+            </div>
+        </div>
+
+        <!-- Metrics Cards -->
+        <section class="metrics-grid">
+            <div class="metric-card card-total">
+                <div class="metric-icon">📑</div>
+                <div class="metric-info">
+                    <span class="metric-label">Total Applications</span>
+                    <span class="metric-value" id="totalCount">0</span>
+                </div>
+            </div>
+
+            <div class="metric-card card-pending">
+                <div class="metric-icon">⏳</div>
+                <div class="metric-info">
+                    <span class="metric-label">Pending Review</span>
+                    <span class="metric-value" id="pendingCount">0</span>
+                </div>
+            </div>
+
+            <div class="metric-card card-approved">
+                <div class="metric-icon">✅</div>
+                <div class="metric-info">
+                    <span class="metric-label">Approved Guides</span>
+                    <span class="metric-value" id="approvedCount">0</span>
+                </div>
+            </div>
+
+            <div class="metric-card card-rejected">
+                <div class="metric-icon">🛑</div>
+                <div class="metric-info">
+                    <span class="metric-label">Rejected</span>
+                    <span class="metric-value" id="rejectedCount">0</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filters & Search Toolbar -->
+        <section class="toolbar-card">
+            <div class="status-filters">
+                <button class="filter-tab active" data-status="all">All (<span id="tabCountAll">0</span>)</button>
+                <button class="filter-tab" data-status="Pending">⏳ Pending (<span id="tabCountPending">0</span>)</button>
+                <button class="filter-tab" data-status="Approved">✅ Approved (<span id="tabCountApproved">0</span>)</button>
+                <button class="filter-tab" data-status="Rejected">🛑 Rejected (<span id="tabCountRejected">0</span>)</button>
+            </div>
+
+            <div class="search-filters">
+                <div class="admin-search-box">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="adminSearchInput" placeholder="Search by name, email, phone, location...">
+                </div>
+
+                <select id="adminLocationFilter" class="admin-select">
+                    <option value="all">All Locations</option>
+                    <option value="Hampi">Hampi</option>
+                    <option value="Coorg">Coorg</option>
+                    <option value="Mysuru">Mysuru</option>
+                    <option value="Gokarna">Gokarna</option>
+                    <option value="Bengaluru">Bengaluru</option>
+                    <option value="Chikmagalur">Chikmagalur</option>
+                    <option value="Dandeli">Dandeli</option>
+                    <option value="Badami">Badami</option>
+                    <option value="Shivamogga">Shivamogga</option>
+                    <option value="Mangaluru">Mangaluru</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Applications Table Section -->
+        <section class="table-container">
+            <div id="tableLoading" class="table-loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Loading applications...</p>
+            </div>
+
+            <div id="tableEmpty" class="table-empty" style="display: none;">
+                <div class="empty-icon">📂</div>
+                <h3>No Applications Found</h3>
+                <p>There are no guide applications matching the current filter criteria.</p>
+            </div>
+
+            <table id="applicationsTable" class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Applicant</th>
+                        <th>Location</th>
+                        <th>Languages & Exp</th>
+                        <th>Specialties</th>
+                        <th>Submitted</th>
+                        <th>Status</th>
+                        <th class="actions-col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="applicationsTableBody">
+                    <!-- Dynamic Rows Rendered by JS -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- Details View Modal -->
+    <div id="detailModal" class="modal-overlay" aria-hidden="true" role="dialog">
+        <div class="modal-card detail-modal-card">
+            <div class="modal-header">
+                <div>
+                    <span class="eyebrow" id="detailModalEyebrow">APPLICATION DETAILS</span>
+                    <h2 id="detailName">Applicant Name</h2>
+                    <p class="modal-subtitle" id="detailMeta">Submitted on ...</p>
+                </div>
+                <button type="button" class="modal-close" id="closeDetailModalBtn">&times;</button>
+            </div>
+
+            <div class="detail-body">
+                <div class="detail-grid">
+                    <div class="detail-item">
+                        <span class="detail-label">Email Address</span>
+                        <span class="detail-value" id="detailEmail">-</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Phone Number</span>
+                        <span class="detail-value" id="detailPhone">-</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Location / Region</span>
+                        <span class="detail-value" id="detailLocation">-</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Experience</span>
+                        <span class="detail-value" id="detailExp">-</span>
+                    </div>
+                    <div class="detail-item full">
+                        <span class="detail-label">Languages Spoken</span>
+                        <span class="detail-value" id="detailLanguages">-</span>
+                    </div>
+                    <div class="detail-item full">
+                        <span class="detail-label">Specialties</span>
+                        <div class="detail-chips" id="detailSpecialties"></div>
+                    </div>
+                    <div class="detail-item full">
+                        <span class="detail-label">Bio & Local Knowledge</span>
+                        <p class="detail-bio" id="detailBio">-</p>
+                    </div>
+                </div>
+
+                <div class="detail-status-bar">
+                    <span>Current Status: <strong id="detailStatusBadge">-</strong></span>
+                </div>
+            </div>
+
+            <div class="modal-footer detail-modal-footer">
+                <button type="button" class="btn-cancel" id="closeDetailBtn">Close</button>
+                <div class="detail-actions-group">
+                    <button type="button" class="btn-reject" id="modalRejectBtn">Reject</button>
+                    <button type="button" class="btn-approve" id="modalApproveBtn">Approve Guide</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="/js/admin.js"></script>
+</body>
+
+</html>

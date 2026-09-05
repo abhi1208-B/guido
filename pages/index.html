@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Guido — See Karnataka Through Local Eyes</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <header>
+
+        <nav>
+
+            <a href="#" class="logo">
+                Guido
+            </a>
+
+            <div class="nav-links">
+
+                <a href="#explore">Explore</a>
+                <a href="#guides">Guides</a>
+                <a href="#live">Live Updates</a>
+                <a href="#how">How It Works</a>
+
+            </div>
+
+            <button class="nav-button js-become-guide-btn" id="navBecomeGuideBtn">
+                Become a Guide
+            </button>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <span class="eyebrow">
+                LOCAL TRAVEL INTELLIGENCE · KARNATAKA
+            </span>
+
+            <h1>
+                See Karnataka
+                <span>Through Local Eyes.</span>
+            </h1>
+
+            <p>
+                Connect with verified locals for real-time information,
+                authentic recommendations and unforgettable experiences.
+            </p>
+
+            <div class="hero-buttons">
+
+                <button class="primary-btn">
+                    Find a Local Guide →
+                </button>
+
+                <button class="secondary-btn js-become-guide-btn" id="heroBecomeGuideBtn">
+                    Become a Guide
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Floating Guide Card -->
+
+        <div class="guide-card">
+
+            <div class="guide-avatar">
+                RK
+            </div>
+
+            <div class="guide-details">
+
+                <strong>Ravi Kumar</strong>
+
+                <span>📍 Hampi, Karnataka</span>
+
+                <span>✓ Verified Local · ★★★★★ 4.9</span>
+
+                <small>🟢 Available now</small>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         EXPLORE KARNATAKA
+    ========================== -->
+
+    <section class="explore" id="explore">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="eyebrow">
+                    DISCOVER
+                </span>
+
+                <h2>
+                    Explore Karnataka
+                </h2>
+
+                <p>
+                    Discover places. Get local insight. Travel smarter.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Search -->
+
+        <div class="search-box">
+
+            <input type="text" placeholder="Search places in Karnataka..." aria-label="Search destinations">
+
+            <button>
+                🔍 Search
+            </button>
+
+        </div>
+
+
+        <!-- Categories -->
+
+        <div class="categories">
+
+            <button>🏛 Heritage</button>
+            <button>🏔 Mountains</button>
+            <button>🏖 Beaches</button>
+            <button>🌿 Nature</button>
+            <button>🍛 Food</button>
+            <button>🥾 Adventure</button>
+
+        </div>
+
+
+        <!-- Destination Cards -->
+
+        <div class="destination-grid">
+
+
+            <!-- Hampi -->
+
+            <article class="destination-card">
+
+                <img src="https://images.unsplash.com/photo-1600100397608-f010e9a8d6b1?auto=format&fit=crop&w=900&q=80"
+                    alt="Hampi">
+
+                <div class="destination-info">
+
+                    <span>VIJAYANAGARA</span>
+
+                    <h3>Hampi</h3>
+
+                    <p>
+                        Ancient ruins, boulder trails and local stories.
+                    </p>
+
+                    <div class="card-bottom">
+
+                        <strong>
+                            28 verified Guides
+                        </strong>
+
+                        <button>
+                            Explore →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Coorg -->
+
+            <article class="destination-card">
+
+                <img src="https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=900&q=80"
+                    alt="Coorg">
+
+                <div class="destination-info">
+
+                    <span>KODAGU</span>
+
+                    <h3>Coorg</h3>
+
+                    <p>
+                        Coffee country, waterfalls and misty hills.
+                    </p>
+
+                    <div class="card-bottom">
+
+                        <strong>
+                            19 verified Guides
+                        </strong>
+
+                        <button>
+                            Explore →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Gokarna -->
+
+            <article class="destination-card">
+
+                <img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=900&q=80"
+                    alt="Gokarna">
+
+                <div class="destination-info">
+
+                    <span>UTTARA KANNADA</span>
+
+                    <h3>Gokarna</h3>
+
+                    <p>
+                        Quiet beaches and unforgettable sunset trails.
+                    </p>
+
+                    <div class="card-bottom">
+
+                        <strong>
+                            16 verified Guides
+                        </strong>
+
+                        <button>
+                            Explore →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Mysore -->
+
+            <article class="destination-card">
+
+                <img src="https://images.unsplash.com/photo-1600056781444-2f0c8c6a9a9d?auto=format&fit=crop&w=900&q=80"
+                    alt="Mysore">
+
+                <div class="destination-info">
+
+                    <span>MYSURU</span>
+
+                    <h3>Mysore</h3>
+
+                    <p>
+                        Palaces, culture, food and living heritage.
+                    </p>
+
+                    <div class="card-bottom">
+
+                        <strong>
+                            23 verified Guides
+                        </strong>
+
+                        <button>
+                            Explore →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Chikmagalur -->
+
+            <article class="destination-card">
+
+                <img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=900&q=80"
+                    alt="Chikmagalur">
+
+                <div class="destination-info">
+
+                    <span>CHIKKAMAGALURU</span>
+
+                    <h3>Chikmagalur</h3>
+
+                    <p>
+                        Coffee estates, peaks and cool mountain air.
+                    </p>
+
+                    <div class="card-bottom">
+
+                        <strong>
+                            21 verified Guides
+                        </strong>
+
+                        <button>
+                            Explore →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Udupi -->
+
+            <article class="destination-card">
+
+                <img src="https://images.unsplash.com/photo-1596176530529-78163a4f7af2?auto=format&fit=crop&w=900&q=80"
+                    alt="Udupi">
+
+                <div class="destination-info">
+
+                    <span>UDUPI</span>
+
+                    <h3>Udupi</h3>
+
+                    <p>
+                        Temple towns, coastal food and Arabian Sea views.
+                    </p>
+
+                    <div class="card-bottom">
+
+                        <strong>
+                            14 verified Guides
+                        </strong>
+
+                        <button>
+                            Explore →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Badami -->
+
+            <article class="destination-card">
+
+                <img src="https://images.unsplash.com/photo-1623869675781-80aa31012a5a?auto=format&fit=crop&w=900&q=80"
+                    alt="Badami">
+
+                <div class="destination-info">
+
+                    <span>BAGALKOT</span>
+
+                    <h3>Badami</h3>
+
+                    <p>
+                        Red sandstone caves, forts and ancient architecture.
+                    </p>
+
+                    <div class="card-bottom">
+
+                        <strong>
+                            11 verified Guides
+                        </strong>
+
+                        <button>
+                            Explore →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Jog Falls -->
+
+            <article class="destination-card">
+
+                <img src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=900&q=80"
+                    alt="Jog Falls">
+
+                <div class="destination-info">
+
+                    <span>SHIVAMOGGA</span>
+
+                    <h3>Jog Falls</h3>
+
+                    <p>
+                        One of India's spectacular waterfall experiences.
+                    </p>
+
+                    <div class="card-bottom">
+
+                        <strong>
+                            9 verified Guides
+                        </strong>
+
+                        <button>
+                            Explore →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Sakleshpur -->
+
+            <article class="destination-card">
+
+                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=80"
+                    alt="Sakleshpur">
+
+                <div class="destination-info">
+
+                    <span>HASSAN</span>
+
+                    <h3>Sakleshpur</h3>
+
+                    <p>
+                        Green hills, plantations and peaceful trails.
+                    </p>
+
+                    <div class="card-bottom">
+
+                        <strong>
+                            12 verified Guides
+                        </strong>
+
+                        <button>
+                            Explore →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Dandeli -->
+
+            <article class="destination-card">
+
+                <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=80"
+                    alt="Dandeli">
+
+                <div class="destination-info">
+
+                    <span>UTTARA KANNADA</span>
+
+                    <h3>Dandeli</h3>
+
+                    <p>
+                        Forest adventures, rivers and outdoor experiences.
+                    </p>
+
+                    <div class="card-bottom">
+
+                        <strong>
+                            17 verified Guides
+                        </strong>
+
+                        <button>
+                            Explore →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-logo">
+            Guido
+        </div>
+
+        <p>
+            See Karnataka Through Local Eyes.
+        </p>
+
+        <div class="footer-links">
+
+            <a href="#">Explore</a>
+            <a href="#explore">Guides</a>
+            <a href="#">Live Updates</a>
+            <a href="#">Safety</a>
+            <a href="#">Help</a>
+            <a href="/admin" style="font-weight: 600; color: #f28c28;">🛡️ Admin Dashboard</a>
+
+        </div>
+
+        <small>
+            © 2026 Guido. Built for Karnataka.
+        </small>
+
+    </footer>
+
+    <!-- =========================
+         BECOME A GUIDE MODAL
+    ========================== -->
+    <div id="guideModal" class="modal-overlay" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+        <div class="modal-card">
+            <div class="modal-header">
+                <div>
+                    <span class="eyebrow">JOIN OUR LOCAL NETWORK</span>
+                    <h2 id="modalTitle">Become a Verified Guide</h2>
+                    <p class="modal-subtitle">Share Karnataka's hidden gems with passionate travelers and earn on your schedule.</p>
+                </div>
+                <button type="button" class="modal-close" id="closeModalBtn" aria-label="Close modal">&times;</button>
+            </div>
+
+            <form id="guideApplicationForm" class="guide-form" novalidate>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="fullName">Full Name <span class="required">*</span></label>
+                        <input type="text" id="fullName" name="name" placeholder="e.g. Ravi Kumar" required>
+                        <span class="form-error" id="nameError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" placeholder="ravi@example.com" required>
+                        <span class="form-error" id="emailError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number <span class="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required>
+                        <span class="form-error" id="phoneError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">Primary Location / Region <span class="required">*</span></label>
+                        <select id="location" name="location" required>
+                            <option value="" disabled selected>Select district or place</option>
+                            <option value="Hampi (Vijayanagara)">Hampi (Vijayanagara)</option>
+                            <option value="Coorg (Kodagu)">Coorg (Kodagu)</option>
+                            <option value="Mysuru">Mysuru</option>
+                            <option value="Gokarna (Uttara Kannada)">Gokarna (Uttara Kannada)</option>
+                            <option value="Bengaluru">Bengaluru</option>
+                            <option value="Chikmagalur">Chikmagalur</option>
+                            <option value="Dandeli">Dandeli</option>
+                            <option value="Badami (Bagalkot)">Badami (Bagalkot)</option>
+                            <option value="Shivamogga / Jog Falls">Shivamogga / Jog Falls</option>
+                            <option value="Mangaluru & Udupi">Mangaluru & Udupi</option>
+                            <option value="Other">Other Region in Karnataka</option>
+                        </select>
+                        <span class="form-error" id="locationError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="languages">Languages Spoken <span class="required">*</span></label>
+                        <input type="text" id="languages" name="languages" placeholder="e.g. Kannada, English, Hindi" required>
+                        <span class="form-error" id="languagesError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="experienceYears">Years of Guiding Experience</label>
+                        <select id="experienceYears" name="experienceYears">
+                            <option value="0-1">New to guiding (0 - 1 year)</option>
+                            <option value="1-3">1 - 3 years</option>
+                            <option value="3-5">3 - 5 years</option>
+                            <option value="5+">5+ years (Expert Local)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group full-width">
+                    <label>Specialties & Interests <span class="required">*</span></label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label"><input type="checkbox" name="specialties" value="Heritage & Architecture"> 🏛 Heritage</label>
+                        <label class="checkbox-label"><input type="checkbox" name="specialties" value="Trekking & Mountains"> 🏔 Mountains</label>
+                        <label class="checkbox-label"><input type="checkbox" name="specialties" value="Beaches & Coastal"> 🏖 Beaches</label>
+                        <label class="checkbox-label"><input type="checkbox" name="specialties" value="Wildlife & Nature"> 🌿 Nature</label>
+                        <label class="checkbox-label"><input type="checkbox" name="specialties" value="Local Food & Cuisine"> 🍛 Food</label>
+                        <label class="checkbox-label"><input type="checkbox" name="specialties" value="Adventure & Sports"> 🥾 Adventure</label>
+                    </div>
+                    <span class="form-error" id="specialtiesError"></span>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="bio">Tell Us About Yourself & Your Local Knowledge <span class="required">*</span></label>
+                    <textarea id="bio" name="bio" rows="4" placeholder="Share why you love your local region, favorite hidden spots, and why travelers will enjoy touring with you..." required></textarea>
+                    <span class="form-error" id="bioError"></span>
+                </div>
+
+                <div id="formFeedback" class="form-feedback" style="display: none;"></div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn-cancel" id="cancelModalBtn">Cancel</button>
+                    <button type="submit" class="primary-btn submit-btn" id="submitGuideBtn">
+                        <span class="btn-text">Submit Application</span>
+                        <span class="btn-spinner" style="display: none;">Submitting...</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>
